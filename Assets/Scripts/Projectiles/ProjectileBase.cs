@@ -9,7 +9,7 @@ public abstract class ProjectileBase : MonoBehaviour
         CollideFeedback();
         GetComponent<MeshRenderer>().enabled = false;
         GetComponent<Collider>().enabled = false;
-        WaitAndDie(_collideParticles.main.duration);
+        Lifetime = _collideParticles.main.duration;
     }
 
     [SerializeField] float _movementSpeed = 1;
@@ -48,11 +48,6 @@ public abstract class ProjectileBase : MonoBehaviour
         Collide(other.gameObject);
     }
 
-    protected IEnumerator WaitAndDie(float time)
-    {
-        yield return new WaitForSeconds(time);
-        Die();
-    }
     protected void CollideFeedback()
     {
         // Particles
