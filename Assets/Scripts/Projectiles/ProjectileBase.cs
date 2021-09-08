@@ -40,6 +40,9 @@ public abstract class ProjectileBase : MonoBehaviour
 
     protected void FixedUpdate()
     {
+        Vector3 moveOffset = transform.forward * _movementSpeed * Time.fixedDeltaTime;
+        _rb.MovePosition(_rb.position + moveOffset);
+
         Lifetime -= Time.fixedDeltaTime;
     }
 
