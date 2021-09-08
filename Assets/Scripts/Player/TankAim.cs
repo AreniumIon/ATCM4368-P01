@@ -28,6 +28,9 @@ public class TankAim : MonoBehaviour
         {
             worldPos = ray.GetPoint(distance);
 
+            // Adjust y-position
+            worldPos.y = _turretTransform.position.y;
+
             // Aim at mouse
             _turretTransform.LookAt(worldPos);
         }
