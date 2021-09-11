@@ -4,10 +4,13 @@ using UnityEngine;
 
 public abstract class ProjectileBase : MonoBehaviour
 {
+    public List<MeshRenderer> meshRenderers;
+
     protected virtual void Collide(GameObject collision)
     {
         CollideFeedback();
-        GetComponent<MeshRenderer>().enabled = false;
+        foreach (MeshRenderer mr in meshRenderers)
+            mr.enabled = false;
         GetComponent<Collider>().enabled = false;
         Lifetime = _collideParticles.main.duration;
     }

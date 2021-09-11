@@ -686,8 +686,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5798079564280335866}
+  - component: {fileID: 8066162950158146262}
   - component: {fileID: 5798079564280335870}
   - component: {fileID: 87666353030019270}
+  - component: {fileID: 7054910846322652247}
   m_Layer: 0
   m_Name: Armadillo
   m_TagString: Untagged
@@ -712,6 +714,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.075, y: -0.01, z: -0.023}
+--- !u!136 &8066162950158146262
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798079564280335840}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 14
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -2.5}
 --- !u!54 &5798079564280335870
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -743,6 +759,19 @@ MonoBehaviour:
   _damageAmount: 1
   _impactParticles: {fileID: 0}
   _impactSound: {fileID: 0}
+--- !u!114 &7054910846322652247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798079564280335840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3318b54881b8ac14f8e9341c23852774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 10
 --- !u!1 &5836600604275032138
 GameObject:
   m_ObjectHideFlags: 0

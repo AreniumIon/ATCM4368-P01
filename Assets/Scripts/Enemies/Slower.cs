@@ -9,7 +9,7 @@ public class Slower : Enemy
 
     [SerializeField] AudioClip _restoreSpeedSound;
 
-    protected override bool PlayerImpact(Player player)
+    protected override bool PlayerImpact(PlayerHealth player)
     {
         TankController controller = player.GetComponent<TankController>();
         if (controller != null)

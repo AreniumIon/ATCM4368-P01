@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Player player = collision.gameObject.GetComponent<Player>();
+        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
         if (player != null)
         {
             bool success = PlayerImpact(player);
@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Return true if successful. Used for feedback
-    protected virtual bool PlayerImpact(Player player)
+    protected virtual bool PlayerImpact(PlayerHealth player)
     {
         return player.DecreaseHealth(_damageAmount);
     }

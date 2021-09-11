@@ -6,7 +6,7 @@ public class Treasure : CollectibleBase
 {
     [SerializeField] int treasureCount = 1;
 
-    protected override void Collect(Player player)
+    protected override void Collect(PlayerHealth player)
     {
         Inventory inventory = player.GetComponent<Inventory>();
         if (inventory != null)

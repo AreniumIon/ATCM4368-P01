@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(TankController), typeof(Inventory))]
-public class Player : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI healthText;
-
-    public List<MeshRenderer> meshRenderers;
-
+    
     [SerializeField] int _maxHealth = 3;
     int _currentHealth;
     public int CurrentHealth
@@ -27,15 +24,6 @@ public class Player : MonoBehaviour
     {
         get => _canTakeDamage;
         set => _canTakeDamage = value;
-    }
-
-    TankController _tankController;
-    Inventory _inventory;
-
-    private void Awake()
-    {
-        _tankController = GetComponent<TankController>();
-        _inventory = GetComponent<Inventory>();
     }
 
     private void Start()

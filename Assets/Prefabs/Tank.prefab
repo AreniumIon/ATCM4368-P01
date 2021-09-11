@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 3026912253604664034}
   - component: {fileID: 2437013433781010851}
   - component: {fileID: 4214213808313726345}
+  - component: {fileID: 5958858900398140312}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -381,15 +382,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7720170146034085694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7deae910b21a2142adfc1132501442e, type: 3}
+  m_Script: {fileID: 11500000, guid: ee916dcca9903544c8222ace24f02454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 0}
-  meshRenderers:
-  - {fileID: 7720170145884713143}
-  - {fileID: 7720170146591282823}
-  - {fileID: 7720170145659977762}
-  - {fileID: 7720170145939735731}
   _maxHealth: 3
 --- !u!114 &7720170146034085690
 MonoBehaviour:
@@ -447,6 +443,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   treasureText: {fileID: 0}
   _startingTreasure: 0
+--- !u!114 &5958858900398140312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720170146034085694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6f9083fcf1427a45ab4adbadb632077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderers:
+  - {fileID: 7720170145884713143}
+  - {fileID: 7720170146591282823}
+  - {fileID: 7720170145659977762}
+  - {fileID: 7720170145939735731}
 --- !u!1 &7720170146591282825
 GameObject:
   m_ObjectHideFlags: 0
