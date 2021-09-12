@@ -9,7 +9,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] ParticleSystem _impactParticles;
     [SerializeField] AudioClip _impactSound;
 
-    Rigidbody _rb;
+    private Rigidbody _rb;
+    protected Rigidbody Rb => _rb;
 
     private void Awake()
     {
@@ -51,7 +52,7 @@ public class Enemy : MonoBehaviour
         Move();
     }
 
-    public void Move()
+    protected virtual void Move()
     {
 
     }
