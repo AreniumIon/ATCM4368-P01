@@ -53,7 +53,9 @@ public class Armadillo : Enemy
     // Walks towards player, up to speed
     private void Walk(float speed)
     {
-
+        Vector3 currentPos = Rb.position;
+        Vector3 newPos = currentPos + (_targetPos - currentPos).normalized * speed * Time.fixedDeltaTime;
+        Rb.MovePosition(newPos);
     }
 
     // Rotates towards player, up to angle

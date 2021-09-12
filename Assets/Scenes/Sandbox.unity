@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &46424337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7720170146034085694, guid: 2f8cf42d39cc68d48a619dc80c9ead6e, type: 3}
+  m_PrefabInstance: {fileID: 7720170145569939278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &139571740
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +275,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 87666353030019270, guid: fcc02aeba705fc14f94bef632779072b, type: 3}
+      propertyPath: _playerObject
+      value: 
+      objectReference: {fileID: 46424337}
     - target: {fileID: 5798079564280335840, guid: fcc02aeba705fc14f94bef632779072b, type: 3}
       propertyPath: m_Name
       value: Armadillo
