@@ -1,43 +1,85 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Random;
 
 public class Armadillo : Enemy
 {
     [SerializeField] private GameObject _playerObject;
 
-    [SerializeField] private float _walkSpeed = 1f;
-    [SerializeField] private float _rotateSpeed = 30f;
+    private float _walkSpeed = 0.75f;
+    private float _rotateSpeed = 20f;
 
+    private float _minWalkTime = 3f;
+    private float _maxWalkTime = 8f;
+    private float _prepareSwipeTime = 2f;
+    private float _prepareSwipeRotateSpeed = -40f;
 
     private Vector3 _targetPos;
+
+    private BossState _previousState = BossState.Idle;
     private BossState _currentState = BossState.Idle;
+    private BossState CurrentState
+    {
+        get
+        {
+            return _currentState;
+        }
+        set
+        {
+            _previousState = _currentState;
+            _currentState = value;
+
+            switch (value)
+            {
+                case BossState.Idle:
+                    break;
+                case BossState.Walk:
+                    StartCoroutine(DelayStateChange(Random.Range(_minWalkTime, _maxWalkTime), BossState.Decide_Attack));
+                    break;
+                case BossState.Decide_Attack:
+                    CurrentState = DecideAttack();
+                    break;
+                case BossState.Prepare_Swipe:
+                    StartCoroutine(DelayStateChange(_prepareSwipeTime, BossState.Swipe));
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 
 
     enum BossState
     {
         Idle = 0,
         Walk = 1,
-        Prepare_Swipe = 2,
-        Swipe = 3,
-        Jump = 4,
-        Roll_Start = 5,
-        Roll = 6,
-        Roll_End = 7,
+        Decide_Attack = 2,
+        Prepare_Swipe = 3,
+        Swipe = 4,
+        Jump = 5,
+        Roll_Start = 6,
+        Roll = 7,
+        Roll_End = 8,
     }
 
     protected override void Move()
     {
         UpdateTargetPos();
 
-        switch(_currentState)
+        switch(CurrentState)
         {
             case BossState.Idle:
-                _currentState = BossState.Walk;
+                CurrentState = BossState.Walk;
                 break;
             case BossState.Walk:
                 Walk(_walkSpeed);
                 FacePlayer(_rotateSpeed);
+                break;
+            case BossState.Prepare_Swipe:
+                FacePlayer(_prepareSwipeRotateSpeed);
+                break;
+            default:
                 break;
         }
     }
@@ -59,7 +101,7 @@ public class Armadillo : Enemy
     }
 
     // Rotates towards player, up to angle
-    private void FacePlayer(float angle)
+    private void FacePlayer(float maxAngle)
     {
         Vector3 currentPos = Rb.position;
 
@@ -72,12 +114,29 @@ public class Armadillo : Enemy
 
         float horAngle = Vector2.Angle(aHor, bHor);
 
+        // Cap angle
+        horAngle = Mathf.Clamp(horAngle, 0f, Mathf.Abs(maxAngle));
+
         // Left or right
         Vector3 cross = Vector3.Cross(aHor, bHor);
         if (cross.z > 0)
             horAngle *= -1;
+        if (maxAngle < 0)
+            horAngle *= -1;
+
 
         // Rotate entire tower horizontally
         transform.Rotate(Vector3.up, horAngle * Time.fixedDeltaTime);
+    }
+
+    private IEnumerator DelayStateChange(float time, BossState newState)
+    {
+        yield return new WaitForSeconds(time);
+        CurrentState = newState;
+    }
+
+    private BossState DecideAttack()
+    {
+        return BossState.Prepare_Swipe;
     }
 }

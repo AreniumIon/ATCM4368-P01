@@ -761,7 +761,7 @@ MonoBehaviour:
   _impactSound: {fileID: 0}
   _playerObject: {fileID: 0}
   _walkSpeed: 1
-  _rotateSpeed: 10
+  _rotateSpeed: 30
 --- !u!114 &7054910846322652247
 MonoBehaviour:
   m_ObjectHideFlags: 0
