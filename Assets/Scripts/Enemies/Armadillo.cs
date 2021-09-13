@@ -6,8 +6,8 @@ public class Armadillo : Enemy
 {
     [SerializeField] private GameObject _playerObject;
 
-    [SerializeField] private float _walkSpeed = 2f;
-    [SerializeField] private float _rotateSpeed = 2f;
+    [SerializeField] private float _walkSpeed = 1f;
+    [SerializeField] private float _rotateSpeed = 30f;
 
 
     private Vector3 _targetPos;
@@ -61,6 +61,23 @@ public class Armadillo : Enemy
     // Rotates towards player, up to angle
     private void FacePlayer(float angle)
     {
+        Vector3 currentPos = Rb.position;
 
+        Vector3 a = transform.forward;
+        Vector3 b = (_targetPos - currentPos).normalized;
+
+        // Horizontal
+        Vector2 aHor = new Vector2(a.x, a.z);
+        Vector2 bHor = new Vector2(b.x, b.z);
+
+        float horAngle = Vector2.Angle(aHor, bHor);
+
+        // Left or right
+        Vector3 cross = Vector3.Cross(aHor, bHor);
+        if (cross.z > 0)
+            horAngle *= -1;
+
+        // Rotate entire tower horizontally
+        transform.Rotate(Vector3.up, horAngle * Time.fixedDeltaTime);
     }
 }
