@@ -14,12 +14,13 @@ public class Armadillo : Enemy
     private float _maxWalkTime = 8f;
     private float _prepareSwipeTime = 2f;
     private float _prepareSwipeRotateSpeed = -40f;
+    private float _swipeTime = 2f;
 
     private Vector3 _targetPos;
 
     private BossState _previousState = BossState.Idle;
     private BossState _currentState = BossState.Idle;
-    private BossState CurrentState
+    public BossState CurrentState
     {
         get
         {
@@ -43,6 +44,9 @@ public class Armadillo : Enemy
                 case BossState.Prepare_Swipe:
                     StartCoroutine(DelayStateChange(_prepareSwipeTime, BossState.Swipe));
                     break;
+                case BossState.Swipe:
+                    StartCoroutine(DelayStateChange(_prepareSwipeTime, BossState.Swipe));
+                    break;
                 default:
                     break;
             }
@@ -50,7 +54,7 @@ public class Armadillo : Enemy
     }
 
 
-    enum BossState
+    public enum BossState
     {
         Idle = 0,
         Walk = 1,
