@@ -56,6 +56,8 @@ public static class MathFunctions
         Vector3 cross = Vector3.Cross(dir1, dir2);
         if (cross.z > 0)
             angle *= -1;
+        if (maxAngle < 0)
+            angle *= -1;
 
         return angle;
     }

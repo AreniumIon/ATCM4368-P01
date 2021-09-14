@@ -9,7 +9,7 @@ public class Armadillo : Enemy
 
     [SerializeField] private Animator _animator;
 
-    private float _walkSpeed = 0.75f;
+    private float _walkSpeed = 0.8f;
     private float _rotateSpeed = 20f;
 
     private float _minWalkTime = 3f;
@@ -99,7 +99,8 @@ public class Armadillo : Enemy
         }
 
         // Update left/right animations
-        bool playerToRight = true;
+        bool playerToRight = MathFunctions.IsTargetToRight(Rb.position, _targetPos, transform.forward);
+        _animator.SetBool("FaceRight", playerToRight);
 
 
         //_animator.SetInteger("BossState", (int)value);
@@ -116,30 +117,10 @@ public class Armadillo : Enemy
     // Rotates towards player, up to angle
     private void FacePlayer(float maxAngle)
     {
-        Vector3 currentPos = Rb.position;
-
-        Vector3 a = transform.forward;
-        Vector3 b = (_targetPos - currentPos).normalized;
-
-        // Horizontal
-        Vector2 aHor = new Vector2(a.x, a.z);
-        Vector2 bHor = new Vector2(b.x, b.z);
-
-        float horAngle = Vector2.Angle(aHor, bHor);
-
-        // Cap angle
-        horAngle = Mathf.Clamp(horAngle, 0f, Mathf.Abs(maxAngle));
-
-        // Left or right
-        Vector3 cross = Vector3.Cross(aHor, bHor);
-        if (cross.z > 0)
-            horAngle *= -1;
-        if (maxAngle < 0)
-            horAngle *= -1;
-
+        float angle = MathFunctions.GetCappedAngle(Rb.position, _targetPos, transform.forward, maxAngle);
 
         // Rotate entire tower horizontally
-        transform.Rotate(Vector3.up, horAngle * Time.fixedDeltaTime);
+        transform.Rotate(Vector3.up, angle * Time.fixedDeltaTime);
     }
 
     private IEnumerator DelayStateChange(float time, BossState newState)
