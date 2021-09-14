@@ -19,6 +19,12 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        DoCollision(collision);
+    }
+
+    // Separate so other scripts can simulate a collision (ArmadilloTail)
+    public void DoCollision(Collision collision)
+    {
         PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
         if (player != null)
         {
