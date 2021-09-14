@@ -7,14 +7,16 @@ public class Armadillo : Enemy
 {
     [SerializeField] private GameObject _playerObject;
 
+    [SerializeField] private Animator _animator;
+
     private float _walkSpeed = 0.75f;
     private float _rotateSpeed = 20f;
 
     private float _minWalkTime = 3f;
     private float _maxWalkTime = 8f;
-    private float _prepareSwipeTime = 2f;
-    private float _prepareSwipeRotateSpeed = -40f;
-    private float _swipeTime = 2f;
+    private float _prepareSwipeTime = 1f;
+    private float _prepareSwipeRotateSpeed = -60f;
+    private float _swipeTime = 1f;
 
     private Vector3 _targetPos;
 
@@ -30,6 +32,7 @@ public class Armadillo : Enemy
         {
             _previousState = _currentState;
             _currentState = value;
+            _animator.SetInteger("BossState", (int) value);
 
             switch (value)
             {
@@ -45,7 +48,7 @@ public class Armadillo : Enemy
                     StartCoroutine(DelayStateChange(_prepareSwipeTime, BossState.Swipe));
                     break;
                 case BossState.Swipe:
-                    StartCoroutine(DelayStateChange(_prepareSwipeTime, BossState.Swipe));
+                    StartCoroutine(DelayStateChange(_swipeTime, BossState.Walk));
                     break;
                 default:
                     break;
