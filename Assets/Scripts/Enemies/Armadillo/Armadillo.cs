@@ -97,6 +97,12 @@ public class Armadillo : Enemy
         {
             _targetPos = _playerObject.transform.position;
         }
+
+        // Update left/right animations
+        bool playerToRight = true;
+
+
+        //_animator.SetInteger("BossState", (int)value);
     }
 
     // Walks towards player, up to speed
