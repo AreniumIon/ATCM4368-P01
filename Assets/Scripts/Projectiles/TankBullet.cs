@@ -8,11 +8,15 @@ public class TankBullet : ProjectileBase
 
     protected override void Collide(GameObject collision)
     {
-        // Deal damage if enemy has health
-        BossHealth bossHealth = collision.GetComponent<BossHealth>();
-        if (bossHealth != null)
+        IDamageable damageable = collision.GetComponent<IDamageable>();
+        if (damageable != null)
         {
-            bossHealth.TakeDamage(_damage);
+            // Cast before dealing damage
+            if (damageable as BossHealth)
+                ((BossHealth)damageable).TakeDamage(_damage);
+            else if (damageable as Health)
+                ((Health)damageable).TakeDamage(_damage);
+
         }
 
         // Collide for any enemy
@@ -23,3 +27,13 @@ public class TankBullet : ProjectileBase
         }
     }
 }
+
+// This code prefers Base Health class over child classes like BossHealth, so it wont work
+/*
+        // Deal damage if enemy has health
+        IDamageable damageable = collision.GetComponent<IDamageable>();
+        if (damageable != null)
+        {
+            damageable.TakeDamage(_damage);
+        }
+*/
