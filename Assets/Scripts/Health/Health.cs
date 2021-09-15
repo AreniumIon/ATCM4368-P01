@@ -24,7 +24,7 @@ public class Health : MonoBehaviour, IDamageable
     public virtual bool TakeDamage(int amount)
     {
         CurrentHealth -= amount;
-        if (_currentHealth <= 0)
+        if (CurrentHealth <= 0)
             Kill();
         return true;
     }

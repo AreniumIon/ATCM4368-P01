@@ -9,10 +9,10 @@ public class TankBullet : ProjectileBase
     protected override void Collide(GameObject collision)
     {
         // Deal damage if enemy has health
-        EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
-        if (enemyHealth != null)
+        BossHealth bossHealth = collision.GetComponent<BossHealth>();
+        if (bossHealth != null)
         {
-            enemyHealth.DecreaseHealth(_damage);
+            bossHealth.TakeDamage(_damage);
         }
 
         // Collide for any enemy

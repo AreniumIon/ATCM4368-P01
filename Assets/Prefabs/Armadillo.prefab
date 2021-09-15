@@ -1060,7 +1060,7 @@ GameObject:
   - component: {fileID: 8066162950158146262}
   - component: {fileID: 5798079564280335870}
   - component: {fileID: 87666353030019270}
-  - component: {fileID: 7054910846322652247}
+  - component: {fileID: 7852505541036740332}
   m_Layer: 0
   m_Name: Armadillo
   m_TagString: Untagged
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   _impactSound: {fileID: 0}
   _playerObject: {fileID: 0}
   _animator: {fileID: 5936571525088163575}
---- !u!114 &7054910846322652247
+--- !u!114 &7852505541036740332
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1140,7 +1140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5798079564280335840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3318b54881b8ac14f8e9341c23852774, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a3b6d25a8a61a444b8658a78350d5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
