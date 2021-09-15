@@ -10,8 +10,9 @@ public class Invincibility : PowerUpBase
 
     protected override void PowerUp(PlayerHealth player)
     {
+        player.MakeInvincible(PowerupDuration);
+
         PlayerVisuals playerVisuals = player.gameObject.GetComponent<PlayerVisuals>();
-        player.CanTakeDamage = false;
 
         // Store player's materials to return later
         foreach (MeshRenderer mr in playerVisuals.meshRenderers)
@@ -24,7 +25,6 @@ public class Invincibility : PowerUpBase
     protected override void PowerDown(PlayerHealth player)
     {
         PlayerVisuals playerVisuals = player.gameObject.GetComponent<PlayerVisuals>();
-        player.CanTakeDamage = true;
          
         // Return player's materials to corresponding meshes
         int i = 0;

@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
     // Return true if successful. Used for feedback
     protected virtual bool PlayerImpact(PlayerHealth player)
     {
-        return player.DecreaseHealth(_damageAmount);
+        return player.TakeDamage(_damageAmount);
     }
 
     private void ImpactFeedback(bool success)

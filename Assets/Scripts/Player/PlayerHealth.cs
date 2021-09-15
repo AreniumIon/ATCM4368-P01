@@ -3,57 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : Health
 {
     [SerializeField] TextMeshProUGUI healthText;
     
-    [SerializeField] int _maxHealth = 3;
-    int _currentHealth;
-    public int CurrentHealth
+    protected new int CurrentHealth
     {
-        get => _currentHealth;
+        get => base.CurrentHealth;
         set
         {
-            _currentHealth = value;
-            healthText.text = _currentHealth.ToString();
+            base.CurrentHealth = value;
+            healthText.text = base.CurrentHealth.ToString();
         }
     }
 
-    bool _canTakeDamage;
-    public bool CanTakeDamage
-    {
-        get => _canTakeDamage;
-        set => _canTakeDamage = value;
+    // Stored as an int to prevent duplicate invincibility calls messing up timing
+    int _invincibilityStacks = 0;
+    protected bool IsInvincible
+    { 
+        get
+        {
+            return _invincibilityStacks > 0;
+        }
+        set
+        {
+            if (value == true)
+            {
+                _invincibilityStacks += 1;
+            }
+            else if (value == false)
+            {
+                _invincibilityStacks -= 1;
+                if (_invincibilityStacks < 0)
+                    _invincibilityStacks = 0;
+            }
+        }
     }
 
-    private void Start()
+    protected new void Start()
     {
-        CurrentHealth = _maxHealth;
-        CanTakeDamage = true;
+        CurrentHealth = MaxHealth;
+        IsInvincible = false;
     }
 
-    public void IncreaseHealth(int amount)
+    public override bool TakeDamage(int amount)
     {
-        CurrentHealth = Mathf.Clamp(CurrentHealth + amount, 0, _maxHealth);
-    }
-
-    // Return true if took damage, false if invincible
-    public bool DecreaseHealth(int amount)
-    {
-        if (CanTakeDamage)
+        if (!IsInvincible)
         {
             CurrentHealth -= amount;
-            if (_currentHealth <= 0)
+            if (CurrentHealth <= 0)
                 Kill();
             return true;
         }
         return false;
     }
 
-    public void Kill()
+    public override void Kill()
     {
         gameObject.SetActive(false);
         // particles
         // sounds
+    }
+
+    public void MakeInvincible(float time)
+    {
+        IsInvincible = true;
+        StartCoroutine(WaitAndRemoveInvincibility(time));
+    }
+
+    protected IEnumerator WaitAndRemoveInvincibility(float time)
+    {
+        yield return new WaitForSeconds(time);
+        IsInvincible = false;
     }
 }

@@ -2,17 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IDamageable
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] int _maxHealth = 3;
+    protected int MaxHealth { get => _maxHealth; set => _maxHealth = value; }
+
+    private int _currentHealth;
+    protected int CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
+
+    protected void Start()
     {
-        
+        CurrentHealth = MaxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void IncreaseHealth(int amount)
     {
-        
+        CurrentHealth = Mathf.Clamp(CurrentHealth + amount, 0, MaxHealth);
+    }
+
+    // Return true if took damage, false if invincible
+    public virtual bool TakeDamage(int amount)
+    {
+        CurrentHealth -= amount;
+        if (_currentHealth <= 0)
+            Kill();
+        return true;
+    }
+
+    public virtual void Kill()
+    {
+        gameObject.SetActive(false);
+        // particles
+        // sounds
     }
 }
