@@ -51,6 +51,10 @@ public class PlayerHealth : Health
         if (!IsInvincible)
         {
             CurrentHealth -= amount;
+
+            // Short invincibility
+            MakeInvincible(.5f);
+
             TakeDamageFeedback();
             if (CurrentHealth <= 0)
                 Kill();
