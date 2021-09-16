@@ -64,7 +64,7 @@ public abstract class ProjectileBase : MonoBehaviour
         // Audio
         if (_collideSound != null)
         {
-            AudioHelper.PlayClip2D(_collideSound, 1f);
+            AudioHelper.PlayClip2D(_collideSound, .5f);
         }
     }
 

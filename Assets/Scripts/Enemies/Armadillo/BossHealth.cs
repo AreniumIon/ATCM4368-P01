@@ -23,7 +23,7 @@ public class BossHealth : Health
         CurrentHealth = MaxHealth;
     }
 
-    public virtual bool TakeDamage(int amount)
+    public override bool TakeDamage(int amount)
     {
         CurrentHealth -= amount;
         if (CurrentHealth <= 0)

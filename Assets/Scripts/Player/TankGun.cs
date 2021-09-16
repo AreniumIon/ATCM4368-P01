@@ -5,6 +5,9 @@ using System;
 
 public class TankGun : MonoBehaviour
 {
+    [SerializeField] ParticleSystem _fireParticles;
+    [SerializeField] AudioClip _fireSound;
+
     [SerializeField] float _fireRate = .5f;
     public float FireRate
     {
@@ -40,6 +43,22 @@ public class TankGun : MonoBehaviour
 
             // Reset Timer
             FireTimer = FireRate;
+
+            FireFeedback();
+        }
+    }
+
+    protected void FireFeedback()
+    {
+        // Particles
+        if (_fireParticles != null)
+        {
+            _fireParticles.Play();
+        }
+        // Audio
+        if (_fireSound != null)
+        {
+            AudioHelper.PlayClip2D(_fireSound, .5f);
         }
     }
 }
