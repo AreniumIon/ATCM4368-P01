@@ -5,6 +5,7 @@ using TMPro;
 
 public class PlayerHealth : Health
 {
+    [SerializeField] float _damagedInvincibilityTime;
     [SerializeField] TextMeshProUGUI healthText;
     
     protected new int CurrentHealth
@@ -53,7 +54,7 @@ public class PlayerHealth : Health
             CurrentHealth -= amount;
 
             // Short invincibility
-            MakeInvincible(.5f);
+            MakeInvincible(_damagedInvincibilityTime);
 
             TakeDamageFeedback();
             if (CurrentHealth <= 0)
@@ -82,10 +83,4 @@ public class PlayerHealth : Health
         IsInvincible = false;
     }
 
-    protected override void TakeDamageFeedback()
-    {
-        MeshList meshList = gameObject.GetComponent<MeshList>();
-        meshList?.SetMaterial(GameConstants.PlayerDamagedMaterial);
-        meshList?.DelayRestoreMaterials(.5f);
-    }
 }

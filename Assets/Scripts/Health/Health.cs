@@ -10,6 +10,10 @@ public class Health : MonoBehaviour, IDamageable
     private int _currentHealth;
     protected int CurrentHealth { get => _currentHealth; set => _currentHealth = value; }
 
+    [SerializeField] Material _damagedMaterial;
+    [SerializeField] float _damagedFlashTime;
+    [SerializeField] AudioClip _damagedSound;
+
     protected void Start()
     {
         CurrentHealth = MaxHealth;
@@ -39,8 +43,15 @@ public class Health : MonoBehaviour, IDamageable
 
     protected virtual void TakeDamageFeedback()
     {
+        // Visuals
         MeshList meshList = gameObject.GetComponent<MeshList>();
-        meshList?.SetMaterial(GameConstants.EnemyDamagedMaterial);
-        meshList?.DelayRestoreMaterials(.1f);
+        meshList?.SetMaterial(_damagedMaterial);
+        meshList?.DelayRestoreMaterials(_damagedFlashTime);
+
+        // Audio
+        if (_damagedSound != null)
+        {
+            AudioHelper.PlayClip2D(_damagedSound, 1f);
+        }
     }
 }

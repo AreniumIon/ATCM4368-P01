@@ -1145,6 +1145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  _damagedMaterial: {fileID: 2100000, guid: 79cb3ca62915cee4eb7d007c4cce1243, type: 2}
+  _damagedFlashTime: 0.1
+  _damagedSound: {fileID: 8300000, guid: 2f253d09c9bb28b4aa395338c0be6fbb, type: 3}
   healthText: {fileID: 0}
 --- !u!114 &507529185619431108
 MonoBehaviour:

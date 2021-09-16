@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5798079564280335871}
   - component: {fileID: 5798079564280335870}
   - component: {fileID: 5798079564280335841}
-  - component: {fileID: 5604298066825643735}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -130,19 +129,6 @@ MonoBehaviour:
   _damageAmount: 1
   _impactParticles: {fileID: 1868376841084567232}
   _impactSound: {fileID: 8300000, guid: f182c519eb4a40e478762e94a9d55e75, type: 3}
---- !u!114 &5604298066825643735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5798079564280335840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3318b54881b8ac14f8e9341c23852774, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 3
 --- !u!1 &8396773669852512634
 GameObject:
   m_ObjectHideFlags: 0
