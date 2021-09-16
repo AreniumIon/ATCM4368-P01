@@ -51,6 +51,7 @@ public class PlayerHealth : Health
         if (!IsInvincible)
         {
             CurrentHealth -= amount;
+            TakeDamageFeedback();
             if (CurrentHealth <= 0)
                 Kill();
             return true;
@@ -75,5 +76,14 @@ public class PlayerHealth : Health
     {
         yield return new WaitForSeconds(time);
         IsInvincible = false;
+    }
+
+    protected override void TakeDamageFeedback()
+    {
+        MeshList meshList = gameObject.GetComponent<MeshList>();
+        meshList?.SetMaterial(GameConstants.PlayerDamagedMaterial);
+        meshList?.DelayRestoreMaterials(.5f);
+
+        base.TakeDamageFeedback();
     }
 }

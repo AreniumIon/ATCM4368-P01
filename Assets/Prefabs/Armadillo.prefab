@@ -1061,6 +1061,7 @@ GameObject:
   - component: {fileID: 5798079564280335870}
   - component: {fileID: 87666353030019270}
   - component: {fileID: 7852505541036740332}
+  - component: {fileID: 507529185619431108}
   m_Layer: 0
   m_Name: Armadillo
   m_TagString: Untagged
@@ -1144,6 +1145,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  healthText: {fileID: 0}
+--- !u!114 &507529185619431108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798079564280335840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6f9083fcf1427a45ab4adbadb632077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meshRenderers:
+  - {fileID: 4621288809688387325}
+  - {fileID: 2395411501172188211}
+  - {fileID: 8376192075717420126}
+  - {fileID: 2162905160477497008}
+  - {fileID: 4207691238380798491}
+  - {fileID: 6714218439320235003}
+  - {fileID: 3735473366094911536}
+  - {fileID: 4569602782163613839}
+  - {fileID: 4731406220139884567}
+  - {fileID: 1696842148809064082}
+  - {fileID: 3696953035824935300}
+  - {fileID: 7393463040831483130}
+  - {fileID: 7372306719245171418}
+  - {fileID: 8346666336960229352}
+  - {fileID: 9031285103039324416}
+  - {fileID: 348211686790040808}
+  - {fileID: 7054041714653178760}
+  - {fileID: 7452908874047605631}
+  - {fileID: 1452836482303440247}
+  - {fileID: 8311958686374986611}
 --- !u!1 &5836600604275032138
 GameObject:
   m_ObjectHideFlags: 0

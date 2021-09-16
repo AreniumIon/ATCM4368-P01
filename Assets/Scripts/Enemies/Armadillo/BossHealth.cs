@@ -26,6 +26,7 @@ public class BossHealth : Health
     public override bool TakeDamage(int amount)
     {
         CurrentHealth -= amount;
+        TakeDamageFeedback();
         if (CurrentHealth <= 0)
             Kill();
         return true;
@@ -36,5 +37,14 @@ public class BossHealth : Health
         gameObject.SetActive(false);
         // particles
         // sounds
+    }
+
+    protected override void TakeDamageFeedback()
+    {
+        MeshList meshList = gameObject.GetComponent<MeshList>();
+        meshList?.SetMaterial(GameConstants.EnemyDamagedMaterial);
+        meshList?.DelayRestoreMaterials(.1f);
+
+        base.TakeDamageFeedback();
     }
 }

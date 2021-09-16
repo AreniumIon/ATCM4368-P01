@@ -24,6 +24,7 @@ public class Health : MonoBehaviour, IDamageable
     public virtual bool TakeDamage(int amount)
     {
         CurrentHealth -= amount;
+        TakeDamageFeedback();
         if (CurrentHealth <= 0)
             Kill();
         return true;
@@ -34,5 +35,10 @@ public class Health : MonoBehaviour, IDamageable
         gameObject.SetActive(false);
         // particles
         // sounds
+    }
+
+    protected virtual void TakeDamageFeedback()
+    {
+
     }
 }
