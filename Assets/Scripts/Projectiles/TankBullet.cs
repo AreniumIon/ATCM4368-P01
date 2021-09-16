@@ -11,7 +11,9 @@ public class TankBullet : ProjectileBase
         IDamageable damageable = collision.GetComponent<IDamageable>();
         if (damageable != null)
         {
-            // Cast before dealing damage
+            // Cast because:
+            // 1. Don't want to damage player
+            // 2. TakeDamage prefers parent classes over child classes, so "Health" gets called over "BossHealth"
             if (damageable as PlayerHealth)
                 return;
             else if (damageable as BossHealth)
