@@ -13,6 +13,8 @@ public class Health : MonoBehaviour, IDamageable
     [SerializeField] Material _damagedMaterial;
     [SerializeField] float _damagedFlashTime;
     [SerializeField] AudioClip _damagedSound;
+    [SerializeField] ParticleSystem _deathParticles;
+    [SerializeField] AudioClip _deathSound;
 
     protected void Start()
     {
@@ -36,9 +38,20 @@ public class Health : MonoBehaviour, IDamageable
 
     public virtual void Kill()
     {
+        // Particles
+        if (_deathParticles != null)
+        {
+            ParticleSystem ps = Instantiate(_deathParticles, transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
+            ps.Play();
+            Destroy(ps.gameObject, ps.main.duration);
+        }
+        // Audio
+        if (_deathSound != null)
+        {
+            AudioHelper.PlayClip2D(_deathSound, 1f);
+        }
+
         gameObject.SetActive(false);
-        // particles
-        // sounds
     }
 
     protected virtual void TakeDamageFeedback()

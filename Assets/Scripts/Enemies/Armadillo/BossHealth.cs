@@ -31,12 +31,4 @@ public class BossHealth : Health
             Kill();
         return true;
     }
-
-    public override void Kill()
-    {
-        gameObject.SetActive(false);
-        // particles
-        // sounds
-    }
-
 }

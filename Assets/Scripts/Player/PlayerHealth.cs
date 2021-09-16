@@ -64,13 +64,6 @@ public class PlayerHealth : Health
         return false;
     }
 
-    public override void Kill()
-    {
-        gameObject.SetActive(false);
-        // particles
-        // sounds
-    }
-
     public void MakeInvincible(float time)
     {
         IsInvincible = true;

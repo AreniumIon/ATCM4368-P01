@@ -1148,6 +1148,8 @@ MonoBehaviour:
   _damagedMaterial: {fileID: 2100000, guid: 79cb3ca62915cee4eb7d007c4cce1243, type: 2}
   _damagedFlashTime: 0.1
   _damagedSound: {fileID: 8300000, guid: 2f253d09c9bb28b4aa395338c0be6fbb, type: 3}
+  _deathParticles: {fileID: 1868376841084567232}
+  _deathSound: {fileID: 8300000, guid: fab48d330033e6a42ab6bc620ef6815a, type: 3}
   healthText: {fileID: 0}
 --- !u!114 &507529185619431108
 MonoBehaviour:
@@ -1804,7 +1806,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1857,7 +1859,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 15
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1973,7 +1975,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2664,7 +2666,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 20
+        scalar: 50
         minScalar: 30
         maxCurve:
           serializedVersion: 2
