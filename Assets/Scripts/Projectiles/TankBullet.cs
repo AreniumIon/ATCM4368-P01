@@ -12,17 +12,13 @@ public class TankBullet : ProjectileBase
         if (damageable != null)
         {
             // Cast before dealing damage
-            if (damageable as BossHealth)
+            if (damageable as PlayerHealth)
+                return;
+            else if (damageable as BossHealth)
                 ((BossHealth)damageable).TakeDamage(_damage);
-            else if (damageable as Health)
-                ((Health)damageable).TakeDamage(_damage);
+            else
+                damageable.TakeDamage(_damage);
 
-        }
-
-        // Collide for any enemy
-        Enemy enemy = collision.GetComponent<Enemy>();
-        if (enemy != null)
-        {
             base.Collide(collision);
         }
     }
