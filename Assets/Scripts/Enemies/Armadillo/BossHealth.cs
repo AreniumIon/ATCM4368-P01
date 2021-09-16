@@ -39,12 +39,4 @@ public class BossHealth : Health
         // sounds
     }
 
-    protected override void TakeDamageFeedback()
-    {
-        MeshList meshList = gameObject.GetComponent<MeshList>();
-        meshList?.SetMaterial(GameConstants.EnemyDamagedMaterial);
-        meshList?.DelayRestoreMaterials(.1f);
-
-        base.TakeDamageFeedback();
-    }
 }

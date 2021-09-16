@@ -87,7 +87,5 @@ public class PlayerHealth : Health
         MeshList meshList = gameObject.GetComponent<MeshList>();
         meshList?.SetMaterial(GameConstants.PlayerDamagedMaterial);
         meshList?.DelayRestoreMaterials(.5f);
-
-        base.TakeDamageFeedback();
     }
 }

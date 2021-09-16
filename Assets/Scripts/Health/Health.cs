@@ -39,6 +39,8 @@ public class Health : MonoBehaviour, IDamageable
 
     protected virtual void TakeDamageFeedback()
     {
-
+        MeshList meshList = gameObject.GetComponent<MeshList>();
+        meshList?.SetMaterial(GameConstants.EnemyDamagedMaterial);
+        meshList?.DelayRestoreMaterials(.1f);
     }
 }
