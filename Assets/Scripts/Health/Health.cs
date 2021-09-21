@@ -10,14 +10,14 @@ public class Health : MonoBehaviour, IDamageable
     public int MaxHealth
     {
         get => _maxHealth;
-        protected set { _maxHealth = value; HealthChangedEvent.Invoke(MaxHealth, CurrentHealth); }
+        protected set { _maxHealth = value; HealthChangedEvent.Invoke(CurrentHealth, MaxHealth); }
     }
 
     private int _currentHealth;
     public int CurrentHealth 
     {
         get => _currentHealth;
-        protected set { _currentHealth = value; HealthChangedEvent.Invoke(MaxHealth, CurrentHealth); }
+        protected set { _currentHealth = value; HealthChangedEvent.Invoke(CurrentHealth, MaxHealth); }
     }
 
     // Stored as an int to prevent duplicate invincibility calls messing up timing
@@ -53,7 +53,7 @@ public class Health : MonoBehaviour, IDamageable
         TakeDamageEvent += CheckDeath;
 
         // Invoke events for initial values
-        HealthChangedEvent.Invoke(MaxHealth, CurrentHealth);
+        HealthChangedEvent.Invoke(CurrentHealth, MaxHealth);
     }
 
     public virtual void IncreaseHealth(int healthAmount)
