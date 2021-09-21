@@ -8,7 +8,7 @@ public class Invincibility : PowerUpBase
 
     protected override void PowerUp(PlayerHealth player)
     {
-        player.MakeInvincible(PowerupDuration);
+        player.IsInvincible = true;
 
         MeshList playerMeshList = player.gameObject.GetComponent<MeshList>();
         playerMeshList?.SetMaterial(invincibilityMaterial);
@@ -16,6 +16,8 @@ public class Invincibility : PowerUpBase
 
     protected override void PowerDown(PlayerHealth player)
     {
+        player.IsInvincible = false;
+
         MeshList playerMeshList = player.gameObject.GetComponent<MeshList>();
         playerMeshList?.RestoreMaterials();
          
