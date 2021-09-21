@@ -7,10 +7,18 @@ public class Health : MonoBehaviour, IDamageable
 {
     // Variables
     [SerializeField] int _maxHealth = 3;
-    public int MaxHealth { get => _maxHealth; protected set => _maxHealth = value; }
+    public int MaxHealth
+    {
+        get => _maxHealth;
+        protected set { _maxHealth = value; HealthChangedEvent.Invoke(MaxHealth, CurrentHealth); }
+    }
 
     private int _currentHealth;
-    public int CurrentHealth { get => _currentHealth; protected set => _currentHealth = value; }
+    public int CurrentHealth 
+    {
+        get => _currentHealth;
+        protected set { _currentHealth = value; HealthChangedEvent.Invoke(MaxHealth, CurrentHealth); }
+    }
 
     // Stored as an int to prevent duplicate invincibility calls messing up timing
     int _invincibilityStacks = 0;
@@ -43,21 +51,24 @@ public class Health : MonoBehaviour, IDamageable
         CurrentHealth = MaxHealth;
 
         TakeDamageEvent += CheckDeath;
+
+        // Invoke events for initial values
+        HealthChangedEvent.Invoke(MaxHealth, CurrentHealth);
     }
 
-    public virtual void IncreaseHealth(int damageAmount)
+    public virtual void IncreaseHealth(int healthAmount)
     {
-        CurrentHealth = Mathf.Clamp(CurrentHealth + damageAmount, 0, MaxHealth);
+        CurrentHealth = Mathf.Clamp(CurrentHealth + healthAmount, 0, MaxHealth);
     }
 
 
     // Return true if took damage, false if invincible
-    public bool TakeDamage(int amount)
+    public bool TakeDamage(int damageAmount)
     {
         if (!IsInvincible)
         {
-            CurrentHealth -= amount;
-            TakeDamageEvent.Invoke(amount);
+            CurrentHealth -= damageAmount;
+            TakeDamageEvent.Invoke(damageAmount);
             return true;
         }
         return false;
