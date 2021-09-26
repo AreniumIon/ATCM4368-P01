@@ -23,6 +23,7 @@ public class Armadillo : Enemy
     private float _rollTime = 5f;
 
     private Vector3 _targetPos;
+    public Vector3 TargetPos => _targetPos;
 
     private BossState _previousState = BossState.Idle;
     private BossState _currentState = BossState.Idle;

@@ -70,6 +70,7 @@ public class ArmadilloForms : MonoBehaviour
         rb.constraints = FreezePositionY | FreezeRotationX | FreezeRotationZ;
 
         rb.velocity = new Vector3();
+        rb.angularVelocity = new Vector3();
     }
 
     private void ColliderUncurled(CapsuleCollider col)
@@ -77,10 +78,25 @@ public class ArmadilloForms : MonoBehaviour
         col.center = new Vector3(0f, .5f, .5f);
         col.radius = 2.5f;
         col.height = 7f;
-
+        
         Transform tf = col.transform;
-        tf.rotation = Quaternion.Euler(0f, 0f, 0f);
+        tf.rotation = Quaternion.Euler(0f, GetAngleToPlayer(tf), 0f);
         tf.position = new Vector3(tf.position.x, 2, tf.position.z);
+    }
+
+    private float GetAngleToPlayer(Transform tf)
+    {
+        Armadillo a = GetComponent<Armadillo>();
+        if (a != null)
+        {
+            float angle = MathFunctions.GetAngle(tf.position, a.TargetPos, Vector3.forward);
+
+            //if (MathFunctions.IsTargetToRight(tf.position, a.TargetPos, tf.forward))
+            //    angle *= -1;
+            return angle;
+        }
+
+        return 0f;
     }
 
     // Curled
@@ -113,6 +129,7 @@ public class ArmadilloForms : MonoBehaviour
         col.height = 0f;
 
         Transform tf = col.transform;
+
         tf.rotation = Quaternion.Euler(0f, 0f, 0f);
         tf.position = new Vector3(tf.position.x, 2, tf.position.z);
     }
