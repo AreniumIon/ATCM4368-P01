@@ -20,7 +20,9 @@ public class Armadillo : Enemy
     private float _prepareSwipeTime = 1f;
     private float _prepareSwipeRotateSpeed = -60f;
     private float _swipeTime = 2f;
+    private float _rollStartTime = 1f;
     private float _rollTime = 5f;
+    private float _rollEndTime = 1f;
 
     private Vector3 _targetPos;
     public Vector3 TargetPos => _targetPos;
@@ -55,8 +57,14 @@ public class Armadillo : Enemy
                 case BossState.Swipe:
                     StartCoroutine(DelayStateChange(_swipeTime, BossState.Walk));
                     break;
+                case BossState.Roll_Start:
+                    StartCoroutine(DelayStateChange(_rollStartTime, BossState.Roll));
+                    break;
                 case BossState.Roll:
-                    StartCoroutine(DelayStateChange(_rollTime, BossState.Walk));
+                    StartCoroutine(DelayStateChange(_rollTime, BossState.Roll_End));
+                    break;
+                case BossState.Roll_End:
+                    StartCoroutine(DelayStateChange(_rollEndTime, BossState.Walk));
                     break;
                 default:
                     break;
@@ -90,8 +98,14 @@ public class Armadillo : Enemy
             case BossState.Prepare_Swipe:
                 FacePlayer(_prepareSwipeRotateSpeed);
                 break;
+            case BossState.Roll_Start:
+                ;
+                break;
             case BossState.Roll:
                 Roll(_rollSpeed);
+                break;
+            case BossState.Roll_End:
+                ;
                 break;
             default:
                 break;
@@ -136,7 +150,6 @@ public class Armadillo : Enemy
         Vector3 dir = (_targetPos - currentPos).normalized;
         Vector3 rollForce = dir * speed * Time.fixedDeltaTime;
         Rb.AddForce(rollForce);
-        Debug.Log(rollForce.ToString());
     }
 
     private IEnumerator DelayStateChange(float time, BossState newState)
@@ -147,7 +160,22 @@ public class Armadillo : Enemy
 
     private BossState DecideAttack()
     {
-        //return BossState.Prepare_Swipe;
-        return BossState.Roll;
+        BossState state;
+        int choice = UnityEngine.Random.Range(0, 2);
+        choice = 1;
+        switch (choice)
+        {
+            case 0:
+                state = BossState.Prepare_Swipe;
+                break;
+            case 1:
+                state = BossState.Roll_Start;
+                break;
+            default:
+                Debug.Log("invalid choice");
+                state = BossState.Prepare_Swipe;
+                break;
+        }
+        return state;
     }
 }

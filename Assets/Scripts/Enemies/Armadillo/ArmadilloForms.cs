@@ -90,9 +90,6 @@ public class ArmadilloForms : MonoBehaviour
         if (a != null)
         {
             float angle = MathFunctions.GetAngle(tf.position, a.TargetPos, Vector3.forward);
-
-            //if (MathFunctions.IsTargetToRight(tf.position, a.TargetPos, tf.forward))
-            //    angle *= -1;
             return angle;
         }
 
