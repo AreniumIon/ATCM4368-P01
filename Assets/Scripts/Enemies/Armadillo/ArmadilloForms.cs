@@ -1,50 +1,101 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static EnumMan;
+using static UnityEngine.RigidbodyConstraints;
 
-public static class ArmadilloForms
+public class ArmadilloForms : MonoBehaviour
 {
-    
-    public static void SetUncurled(GameObject armadillo)
+    private static List<BossState> uncurledStates = new List<BossState>()
+    { 
+        BossState.Decide_Attack,
+        BossState.Idle,
+        BossState.Jump,
+        BossState.Prepare_Swipe,
+        BossState.Roll_Start,
+        BossState.Roll_End,
+        BossState.Swipe,
+        BossState.Walk,
+    };
+
+    private static List<BossState> curledStates = new List<BossState>()
     {
-        Rigidbody rb = armadillo.GetComponent<Rigidbody>();
+        BossState.Roll
+    };
+
+    bool isCurled = false;
+    [SerializeField] GameObject uncurledObject;
+    [SerializeField] GameObject curledObject;
+
+    private void Start()
+    {
+        Armadillo armadillo = GetComponent<Armadillo>();
+        armadillo.StateChangedEvent += CheckForm;
+    }
+
+    // Check for form change. Is subscribed to Armadillo.StateChangedEvent
+    public void CheckForm(BossState previousState, BossState currentState)
+    {
+        bool shouldBeCurled = curledStates.Contains(currentState);
+
+        if (isCurled != shouldBeCurled)
+        {
+            if (shouldBeCurled)
+                SetCurled();
+            else
+                SetUncurled();
+        }
+    }
+
+    // Uncurled
+    private void SetUncurled()
+    {
+        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         if (rb != null)
             RigidbodyUncurled(rb);
 
-        CapsuleCollider col = armadillo.GetComponent<CapsuleCollider>();
+        CapsuleCollider col = gameObject.GetComponent<CapsuleCollider>();
         if (col != null)
             ColliderUncurled(col);
+
+        curledObject.SetActive(false);
+        uncurledObject.SetActive(true);
     }
 
-    private static void RigidbodyUncurled(Rigidbody rb)
+    private void RigidbodyUncurled(Rigidbody rb)
     {
-
+        rb.mass = 100f;
+        rb.constraints = FreezePositionY | FreezeRotationX | FreezeRotationZ;
     }
 
-    private static void ColliderUncurled(CapsuleCollider col)
+    private void ColliderUncurled(CapsuleCollider col)
     {
-
+        col.height = 7;
     }
 
-
-    public static void SetCurled(GameObject armadillo)
+    // Curled
+    private void SetCurled()
     {
-        Rigidbody rb = armadillo.GetComponent<Rigidbody>();
+        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         if (rb != null)
             RigidbodyCurled(rb);
 
-        CapsuleCollider col = armadillo.GetComponent<CapsuleCollider>();
+        CapsuleCollider col = gameObject.GetComponent<CapsuleCollider>();
         if (col != null)
             ColliderCurled(col);
+
+        uncurledObject.SetActive(false);
+        curledObject.SetActive(true);
     }
 
-    public static void RigidbodyCurled(Rigidbody rb)
+    private void RigidbodyCurled(Rigidbody rb)
     {
-
+        rb.mass = 100f;
+        rb.constraints = RigidbodyConstraints.None; // FreezePositionY;
     }
 
-    private static void ColliderCurled(CapsuleCollider col)
+    private void ColliderCurled(CapsuleCollider col)
     {
-
+        col.height = 0;
     }
 }

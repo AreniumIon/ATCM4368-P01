@@ -1060,6 +1060,7 @@ GameObject:
   - component: {fileID: 8066162950158146262}
   - component: {fileID: 5798079564280335870}
   - component: {fileID: 87666353030019270}
+  - component: {fileID: 6702305973501560718}
   - component: {fileID: 7852505541036740332}
   - component: {fileID: 826081019690508555}
   - component: {fileID: 507529185619431108}
@@ -1133,6 +1134,20 @@ MonoBehaviour:
   _impactSound: {fileID: 0}
   _playerObject: {fileID: 0}
   _animator: {fileID: 5936571525088163575}
+--- !u!114 &6702305973501560718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798079564280335840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2e5388b33956a488ee13b6f8667745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uncurledObject: {fileID: 3005803714160335065}
+  curledObject: {fileID: 3235576004826644320}
 --- !u!114 &7852505541036740332
 MonoBehaviour:
   m_ObjectHideFlags: 0
