@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5215886787259992448}
   - component: {fileID: 3779963328049942429}
   - component: {fileID: 8376192075717420126}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3696953035824935300}
   - component: {fileID: 2109374074017131432}
   - component: {fileID: 4607154439300704766}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 8346666336960229352}
   - component: {fileID: 4678891522473296233}
   - component: {fileID: 2789143253913151907}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 4683936196162177374}
   - component: {fileID: 7499278301221124007}
   - component: {fileID: 1452836482303440247}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1536703391308509085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Uncurled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9012068878808489350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Curled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 2754917585718708488}
   - component: {fileID: 2337689726726238588}
   - component: {fileID: 4731406220139884567}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BR Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7157900829379339981}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 5059663061980886643}
   - component: {fileID: 854112067787756987}
   - component: {fileID: 348211686790040808}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +654,7 @@ GameObject:
   - component: {fileID: 5085833225052278994}
   - component: {fileID: 3958807749674440313}
   - component: {fileID: 1696842148809064082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BL Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 6073448255990120323}
   - component: {fileID: 5929993347614132772}
   - component: {fileID: 7054041714653178760}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 8198945092908483306}
   - component: {fileID: 810316289174246096}
   - component: {fileID: 2162905160477497008}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,7 +897,7 @@ GameObject:
   - component: {fileID: 7915285884986618038}
   - component: {fileID: 8755848728139733235}
   - component: {fileID: 3735473366094911536}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FR Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 584111910892257721}
   - component: {fileID: 6968681159195745254}
   - component: {fileID: 7452908874047605631}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1064,7 +1064,7 @@ GameObject:
   - component: {fileID: 7852505541036740332}
   - component: {fileID: 826081019690508555}
   - component: {fileID: 507529185619431108}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Armadillo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,7 +1221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8954572006654239867}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1259,7 +1259,7 @@ GameObject:
   - component: {fileID: 6098926465149110062}
   - component: {fileID: 4639184813705991162}
   - component: {fileID: 9031285103039324416}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1338,7 +1338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6657251742021126720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1374,7 +1374,7 @@ GameObject:
   - component: {fileID: 3703008619800902053}
   - component: {fileID: 4165792220726458030}
   - component: {fileID: 4207691238380798491}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1453,7 +1453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1095612543032117881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1490,7 +1490,7 @@ GameObject:
   - component: {fileID: 7372306719245171418}
   - component: {fileID: 2342937660156541626}
   - component: {fileID: 4203045210601601506}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1597,7 +1597,7 @@ GameObject:
   - component: {fileID: 7195831736539466039}
   - component: {fileID: 3464571266044897712}
   - component: {fileID: 6714218439320235003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L Eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1677,7 +1677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4808278845530389819}
   - component: {fileID: 5936571525088163575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1730,7 +1730,7 @@ GameObject:
   - component: {fileID: 4489315598405070600}
   - component: {fileID: 1868376841084567232}
   - component: {fileID: 3131825474661721444}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6592,7 +6592,7 @@ GameObject:
   - component: {fileID: 1358878184609805959}
   - component: {fileID: 4789024202572355444}
   - component: {fileID: 4621288809688387325}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6673,7 +6673,7 @@ GameObject:
   - component: {fileID: 8971161969531915020}
   - component: {fileID: 2679212359885784984}
   - component: {fileID: 4569602782163613839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FL Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6756,7 +6756,7 @@ GameObject:
   - component: {fileID: 7393463040831483130}
   - component: {fileID: 7689471627299899795}
   - component: {fileID: 3744327994078876866}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tail 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6863,7 +6863,7 @@ GameObject:
   - component: {fileID: 3498887711771610046}
   - component: {fileID: 1763502548253856089}
   - component: {fileID: 2395411501172188211}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6944,7 +6944,7 @@ GameObject:
   - component: {fileID: 4968934335423167807}
   - component: {fileID: 2407577829204677729}
   - component: {fileID: 8311958686374986611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

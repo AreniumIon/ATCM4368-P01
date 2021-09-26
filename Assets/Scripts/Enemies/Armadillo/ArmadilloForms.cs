@@ -60,17 +60,27 @@ public class ArmadilloForms : MonoBehaviour
 
         curledObject.SetActive(false);
         uncurledObject.SetActive(true);
+
+        isCurled = false;
     }
 
     private void RigidbodyUncurled(Rigidbody rb)
     {
         rb.mass = 100f;
         rb.constraints = FreezePositionY | FreezeRotationX | FreezeRotationZ;
+
+        rb.velocity = new Vector3();
     }
 
     private void ColliderUncurled(CapsuleCollider col)
     {
-        col.height = 7;
+        col.center = new Vector3(0f, .5f, .5f);
+        col.radius = 2.5f;
+        col.height = 7f;
+
+        Transform tf = col.transform;
+        tf.rotation = Quaternion.Euler(0f, 0f, 0f);
+        tf.position = new Vector3(tf.position.x, 2, tf.position.z);
     }
 
     // Curled
@@ -86,6 +96,8 @@ public class ArmadilloForms : MonoBehaviour
 
         uncurledObject.SetActive(false);
         curledObject.SetActive(true);
+
+        isCurled = true;
     }
 
     private void RigidbodyCurled(Rigidbody rb)
@@ -96,6 +108,12 @@ public class ArmadilloForms : MonoBehaviour
 
     private void ColliderCurled(CapsuleCollider col)
     {
-        col.height = 0;
+        col.center = new Vector3(0f, 1f, 0f);
+        col.radius = 3f;
+        col.height = 0f;
+
+        Transform tf = col.transform;
+        tf.rotation = Quaternion.Euler(0f, 0f, 0f);
+        tf.position = new Vector3(tf.position.x, 2, tf.position.z);
     }
 }
