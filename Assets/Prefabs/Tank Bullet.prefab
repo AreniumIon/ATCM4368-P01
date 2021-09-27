@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2321853741327052863}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7627645092235797537}
   - component: {fileID: 1916701946758593490}
   - component: {fileID: 1462048655941381110}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tank Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 8679002153167557530}
   - component: {fileID: 218438928077208520}
   - component: {fileID: 5845979487849293091}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 5552398889476907231}
   - component: {fileID: 3814557721303706239}
   - component: {fileID: 4332097793562423609}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

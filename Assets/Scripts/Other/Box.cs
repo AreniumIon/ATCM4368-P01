@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
-    [SerializeField] GameObject _bossBullet;
+    [SerializeField] GameObject _bossBulletPrefab;
     [SerializeField] int _bulletCount;
+
+    [SerializeField] GameObject _healthPrefab;
+    [SerializeField] float _healthChance;
+
     Health health;
 
     // If attacked by these layers, instantly die
@@ -13,16 +17,17 @@ public class Box : MonoBehaviour
 
     // If killed by these layers, shoot bullets
     LayerMask _shootBulletsLayers;
-
-    // If killed by these layers, maybe spawn health
+    
+    // If killed by these layers, spawn health
     LayerMask _spawnHealthLayers;
 
 
     private void Start()
     {
         health = GetComponent<Health>();
-        _shootBulletsLayers = LayerMask.GetMask("Armadillo", "ArmadilloTail", "BossBullet");
         _instantDeathLayers = LayerMask.GetMask("Armadillo", "ArmadilloTail");
+        _shootBulletsLayers = LayerMask.GetMask("Armadillo", "ArmadilloTail", "BossBullet");
+        _spawnHealthLayers = LayerMask.GetMask("PlayerBullet");
         health.TakeDamageEvent += CheckTakeDamage;
 
     }
@@ -49,6 +54,13 @@ public class Box : MonoBehaviour
 
     private void ShootBullet(float angle)
     {
-        Instantiate(_bossBullet, transform.position, Quaternion.Euler(0f, angle, 0f));
+        Instantiate(_bossBulletPrefab, transform.position, Quaternion.Euler(0f, angle, 0f));
+    }
+
+    private void SpawnHealth()
+    {
+        float r = Random.Range(0f, 1f);
+        if (r < _healthChance)
+            Instantiate(_healthPrefab, transform.position, Quaternion.Euler(0f, 0f, 0f));
     }
 }
