@@ -6,7 +6,7 @@ public class Invincibility : PowerUpBase
 {
     [SerializeField] Material invincibilityMaterial;
 
-    protected override void PowerUp(PlayerHealth player)
+    protected override void PowerUp(Health player)
     {
         player.IsInvincible = true;
 
@@ -14,7 +14,7 @@ public class Invincibility : PowerUpBase
         playerMeshList?.SetMaterial(invincibilityMaterial);
     }
 
-    protected override void PowerDown(PlayerHealth player)
+    protected override void PowerDown(Health player)
     {
         player.IsInvincible = false;
 

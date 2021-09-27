@@ -15,6 +15,6 @@ public class ArmadilloTail : MonoBehaviour, IDamageable
 
     public bool TakeDamage(int damage)
     {
-        return _armadillo.GetComponent<BossHealth>().TakeDamage(damage);
+        return _armadillo.GetComponent<Health>().TakeDamage(damage);
     }
 }
