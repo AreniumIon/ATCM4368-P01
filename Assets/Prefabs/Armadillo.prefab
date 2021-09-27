@@ -1201,6 +1201,10 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 6794646976624013552, guid: c4214b6dbe5512743bb8a8e977165f51, type: 3}
   _boxPrefab: {fileID: 1931973610896632214, guid: eb2544ab7ddc4c84da8dbbd9c2dbbe2c, type: 3}
   _stompBoxes: 5
+  _boxOffset: 4
+  _boxForce: 650
+  _boxForceVariance: 200
+  _boxAngleVariance: 20
 --- !u!114 &1815150707377182358
 MonoBehaviour:
   m_ObjectHideFlags: 0

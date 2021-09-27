@@ -23,7 +23,7 @@ public class Armadillo : Enemy
     private float _rollStartTime = 1f;
     private float _rollTime = 5f;
     private float _rollEndTime = 1f;
-    private float _jumpTime = 1.5f;
+    private float _jumpTime = 2f;
 
     private Vector3 _targetPos;
     public Vector3 TargetPos => _targetPos;
