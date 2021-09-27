@@ -13,12 +13,12 @@ public class Armadillo : Enemy
 
     private float _walkSpeed = 0.8f;
     private float _rotateSpeed = 20f;
-    private float _rollSpeed = 60000f;
+    private float _rollSpeed = 600f;
 
     private float _minWalkTime = 3f;
     private float _maxWalkTime = 8f;
     private float _prepareSwipeTime = 1f;
-    private float _prepareSwipeRotateSpeed = -60f;
+    private float _prepareSwipeRotateSpeed = -70f;
     private float _swipeTime = 2f;
     private float _rollStartTime = 1f;
     private float _rollTime = 5f;
@@ -148,7 +148,7 @@ public class Armadillo : Enemy
     {
         Vector3 currentPos = Rb.position;
         Vector3 dir = (_targetPos - currentPos).normalized;
-        Vector3 rollForce = dir * speed * Time.fixedDeltaTime;
+        Vector3 rollForce = dir * speed * Time.fixedDeltaTime * Rb.mass;
         Rb.AddForce(rollForce);
     }
 
@@ -162,7 +162,7 @@ public class Armadillo : Enemy
     {
         BossState state;
         int choice = UnityEngine.Random.Range(0, 2);
-        //choice = 0;
+        choice = 0;
         switch (choice)
         {
             case 0:

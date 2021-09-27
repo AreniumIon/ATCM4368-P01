@@ -226,6 +226,7 @@ Transform:
   - {fileID: 6073448255990120323}
   - {fileID: 584111910892257721}
   - {fileID: 4683936196162177374}
+  - {fileID: 3972272262764262350}
   m_Father: {fileID: 7157900829379339981}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -385,6 +386,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2024404532385949651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3972272262764262350}
+  m_Layer: 7
+  m_Name: Swipe Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3972272262764262350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024404532385949651}
+  m_LocalRotation: {x: 0, y: 0.9990483, z: -0.043619405, w: 0}
+  m_LocalPosition: {x: 0, y: 0.49999985, z: -2.5999918}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4868875221064464186}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 5, y: 180, z: 0}
 --- !u!1 &3005803714160335065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,6 +1092,7 @@ GameObject:
   - component: {fileID: 5798079564280335870}
   - component: {fileID: 87666353030019270}
   - component: {fileID: 6702305973501560718}
+  - component: {fileID: 4098951048338124705}
   - component: {fileID: 1815150707377182358}
   - component: {fileID: 826081019690508555}
   - component: {fileID: 507529185619431108}
@@ -1151,6 +1183,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uncurledObject: {fileID: 3005803714160335065}
   curledObject: {fileID: 3235576004826644320}
+--- !u!114 &4098951048338124705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798079564280335840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8069f76ebd206f042b698117e6e2a4b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _swipeSpawn: {fileID: 3972272262764262350}
+  _jumpSpawn: {fileID: 8873721452554451791}
+  _bulletPrefab: {fileID: 6794646976624013552, guid: c4214b6dbe5512743bb8a8e977165f51, type: 3}
+  _boxPrefab: {fileID: 1931973610896632214, guid: eb2544ab7ddc4c84da8dbbd9c2dbbe2c, type: 3}
+  _stompBoxes: 5
 --- !u!114 &1815150707377182358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,6 +1297,7 @@ Transform:
   - {fileID: 1095612543032117881}
   - {fileID: 6657251742021126720}
   - {fileID: 7157900829379339981}
+  - {fileID: 8873721452554451791}
   m_Father: {fileID: 1536703391308509085}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1332,6 +1382,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &6010332697772253119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8873721452554451791}
+  m_Layer: 7
+  m_Name: Jump Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8873721452554451791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6010332697772253119}
+  m_LocalRotation: {x: 5.8207654e-11, y: 7.2759567e-12, z: -1.8058442e-11, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8954572006654239867}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
 --- !u!1 &6315776597887138686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,6 +1760,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4808278845530389819}
   - component: {fileID: 5936571525088163575}
+  - component: {fileID: 6766215990594096207}
   m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
@@ -1722,6 +1803,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6766215990594096207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8251774067709261049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e1e1d8fdc2715499aa8bb55a7c2803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _armadilloGun: {fileID: 4098951048338124705}
 --- !u!1 &8396773669852512634
 GameObject:
   m_ObjectHideFlags: 0

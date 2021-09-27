@@ -109,8 +109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderers:
   - {fileID: 5845979487849293091}
-  _movementSpeed: 10
-  _lifetime: 5
+  _movementSpeed: 8
+  _lifetime: 4
   _collideParticles: {fileID: 3814557721303706239}
   _collideSound: {fileID: 8300000, guid: beb8a6054da9ca24c9c00bd4b9ab4fdf, type: 3}
   _damage: 1
