@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1931973610896632213}
   - component: {fileID: 3465319193903312638}
   - component: {fileID: 6553420650447185850}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Destructible Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a96fc67883ad32941b2112105d89d258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bossBullet: {fileID: 6794646976624013552, guid: c4214b6dbe5512743bb8a8e977165f51, type: 3}
+  _bulletCount: 20
 --- !u!114 &1931973610896632213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +187,7 @@ GameObject:
   - component: {fileID: 9080902773355370094}
   - component: {fileID: 7452727410295735761}
   - component: {fileID: 4245814847140306062}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

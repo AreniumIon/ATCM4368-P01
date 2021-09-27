@@ -1130,6 +1130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageAmount: 1
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 520
   _impactParticles: {fileID: 0}
   _impactSound: {fileID: 0}
   _playerObject: {fileID: 0}

@@ -13,7 +13,7 @@ public class Bullet : ProjectileBase
         IDamageable damageable = collision.GetComponent<IDamageable>();
         if (damageable != null && IsMatchingLayer(layerMask, collision.layer))
         {
-            damageable.TakeDamage(_damage, collision);
+            damageable.TakeDamage(_damage, gameObject);
 
             base.Collide(collision);
         }

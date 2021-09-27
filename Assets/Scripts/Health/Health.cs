@@ -67,8 +67,8 @@ public class Health : MonoBehaviour, IDamageable
     {
         if (!IsInvincible)
         {
-            TakeDamageEvent.Invoke(damageAmount, attacker);
             CurrentHealth -= damageAmount;
+            TakeDamageEvent.Invoke(damageAmount, attacker);
             return true;
         }
         return false;

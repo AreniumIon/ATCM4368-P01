@@ -7,6 +7,7 @@ using static MathFunctions;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] int _damageAmount = 1;
+    [SerializeField] LayerMask collisionMask;
     [SerializeField] ParticleSystem _impactParticles;
     [SerializeField] AudioClip _impactSound;
 
@@ -27,7 +28,7 @@ public class Enemy : MonoBehaviour
     public void DoCollision(GameObject collision)
     {
         IDamageable damageable = collision.GetComponent<IDamageable>();
-        if (damageable != null && IsMatchingLayer(LayerMask.GetMask("Player"), collision.layer))
+        if (damageable != null && IsMatchingLayer(collisionMask, collision.layer))
         {
             bool success = PlayerImpact(collision, damageable);
             ImpactFeedback(success);
