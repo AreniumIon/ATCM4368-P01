@@ -6,23 +6,36 @@ public class Box : MonoBehaviour
 {
     [SerializeField] GameObject _bossBullet;
     [SerializeField] int _bulletCount;
-    LayerMask _spawnBulletsAttackers;
-
     Health health;
+
+    // If attacked by these layers, instantly die
+    LayerMask _instantDeathLayers;
+
+    // If killed by these layers, shoot bullets
+    LayerMask _shootBulletsLayers;
+
+    // If killed by these layers, maybe spawn health
+    LayerMask _spawnHealthLayers;
+
 
     private void Start()
     {
         health = GetComponent<Health>();
-        _spawnBulletsAttackers = LayerMask.GetMask("Armadillo", "ArmadilloTail", "BossBullet");
+        _shootBulletsLayers = LayerMask.GetMask("Armadillo", "ArmadilloTail", "BossBullet");
+        _instantDeathLayers = LayerMask.GetMask("Armadillo", "ArmadilloTail");
         health.TakeDamageEvent += CheckTakeDamage;
+
     }
 
     public void CheckTakeDamage(int damageAmount, GameObject attacker)
     {
-        if (attacker != null && MathFunctions.IsMatchingLayer(_spawnBulletsAttackers, attacker.layer))
+        if (attacker != null)
         {
-            ShootBullets();
-            health.TakeDamage(3, null);
+            if (MathFunctions.IsMatchingLayer(_shootBulletsLayers, attacker.layer) && health.CurrentHealth <= 0)
+                ShootBullets();
+
+            if (MathFunctions.IsMatchingLayer(_instantDeathLayers, attacker.layer) && health.CurrentHealth > 0)
+                health.TakeDamage(3, attacker);
         }
     }
 
