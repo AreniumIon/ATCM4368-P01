@@ -24,7 +24,7 @@ public class HealthFeedback : MonoBehaviour
         health.DeathEvent -= DeathFeedback;
     }
 
-    protected virtual void TakeDamageFeedback(int damageAmount)
+    protected virtual void TakeDamageFeedback(int damageAmount, GameObject attacker)
     {
         // Visuals
         MeshList meshList = gameObject.GetComponent<MeshList>();

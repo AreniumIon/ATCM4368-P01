@@ -38,8 +38,8 @@ public class Health : MonoBehaviour, IDamageable
     // currentHealth, maxHealth
     public event Action<int, int> HealthChangedEvent = delegate { };
 
-    // damageAmount
-    public event Action<int> TakeDamageEvent = delegate { };
+    // damageAmount, attacker
+    public event Action<int, GameObject> TakeDamageEvent = delegate { };
 
     //
     public event Action DeathEvent = delegate { };
@@ -63,18 +63,18 @@ public class Health : MonoBehaviour, IDamageable
 
 
     // Return true if took damage, false if invincible
-    public bool TakeDamage(int damageAmount)
+    public bool TakeDamage(int damageAmount, GameObject attacker)
     {
         if (!IsInvincible)
         {
+            TakeDamageEvent.Invoke(damageAmount, attacker);
             CurrentHealth -= damageAmount;
-            TakeDamageEvent.Invoke(damageAmount);
             return true;
         }
         return false;
     }
 
-    private void CheckDeath(int amount)
+    private void CheckDeath(int amount, GameObject attacker)
     {
         if (CurrentHealth <= 0)
             Kill();

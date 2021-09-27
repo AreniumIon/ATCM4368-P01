@@ -17,7 +17,7 @@ public class InvincibleOnDamaged : MonoBehaviour
         health.TakeDamageEvent -= MakeInvincible;
     }
 
-    public void MakeInvincible(int damageAmount)
+    public void MakeInvincible(int damageAmount, GameObject attacker)
     {
         health.IsInvincible = true;
         StartCoroutine(WaitAndRemoveInvincibility(_invincibilityTime));

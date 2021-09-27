@@ -13,8 +13,8 @@ public class ArmadilloTail : MonoBehaviour, IDamageable
         _armadillo.DoCollision(collision.gameObject);
     }
 
-    public bool TakeDamage(int damage)
+    public bool TakeDamage(int damage, GameObject attacker)
     {
-        return _armadillo.GetComponent<Health>().TakeDamage(damage);
+        return _armadillo.GetComponent<Health>().TakeDamage(damage, attacker);
     }
 }

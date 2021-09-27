@@ -27,10 +27,8 @@ public class Enemy : MonoBehaviour
     public void DoCollision(GameObject collision)
     {
         IDamageable damageable = collision.GetComponent<IDamageable>();
-        Debug.Log(collision.layer.ToString());
         if (damageable != null && IsMatchingLayer(LayerMask.GetMask("Player"), collision.layer))
         {
-            Debug.Log("matching layers");
             bool success = PlayerImpact(collision, damageable);
             ImpactFeedback(success);
         }
@@ -39,7 +37,7 @@ public class Enemy : MonoBehaviour
     // Return true if successful. Used for feedback
     protected virtual bool PlayerImpact(GameObject player, IDamageable playerDamageable)
     {
-        return playerDamageable.TakeDamage(_damageAmount);
+        return playerDamageable.TakeDamage(_damageAmount, gameObject);
     }
 
     private void ImpactFeedback(bool success)
