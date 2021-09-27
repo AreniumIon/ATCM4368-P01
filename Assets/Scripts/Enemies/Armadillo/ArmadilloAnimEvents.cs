@@ -10,4 +10,9 @@ public class ArmadilloAnimEvents : MonoBehaviour
     {
         _armadilloGun.ShootBullet();
     }
+
+    public void Stomp()
+    {
+        _armadilloGun.Stomp();
+    }
 }

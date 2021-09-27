@@ -23,6 +23,7 @@ public class Armadillo : Enemy
     private float _rollStartTime = 1f;
     private float _rollTime = 5f;
     private float _rollEndTime = 1f;
+    private float _jumpTime = 1.5f;
 
     private Vector3 _targetPos;
     public Vector3 TargetPos => _targetPos;
@@ -66,6 +67,9 @@ public class Armadillo : Enemy
                 case BossState.Roll_End:
                     StartCoroutine(DelayStateChange(_rollEndTime, BossState.Walk));
                     break;
+                case BossState.Jump:
+                    StartCoroutine(DelayStateChange(_jumpTime, BossState.Walk));
+                    break;
                 default:
                     break;
             }
@@ -105,6 +109,9 @@ public class Armadillo : Enemy
                 Roll(_rollSpeed);
                 break;
             case BossState.Roll_End:
+                ;
+                break;
+            case BossState.Jump:
                 ;
                 break;
             default:
@@ -165,8 +172,8 @@ public class Armadillo : Enemy
     private BossState DecideAttack()
     {
         BossState state;
-        int choice = UnityEngine.Random.Range(0, 2);
-        choice = 0;
+        int choice = UnityEngine.Random.Range(0, 3);
+        choice = 2;
         switch (choice)
         {
             case 0:
@@ -174,6 +181,9 @@ public class Armadillo : Enemy
                 break;
             case 1:
                 state = BossState.Roll_Start;
+                break;
+            case 2:
+                state = BossState.Jump;
                 break;
             default:
                 Debug.Log("invalid choice");
