@@ -39,6 +39,9 @@ public class Box : MonoBehaviour
             if (MathFunctions.IsMatchingLayer(_shootBulletsLayers, attacker.layer) && health.CurrentHealth <= 0)
                 ShootBullets();
 
+            if (MathFunctions.IsMatchingLayer(_spawnHealthLayers, attacker.layer) && health.CurrentHealth <= 0)
+                SpawnHealth();
+
             if (MathFunctions.IsMatchingLayer(_instantDeathLayers, attacker.layer) && health.CurrentHealth > 0)
                 health.TakeDamage(3, attacker);
         }
@@ -61,6 +64,6 @@ public class Box : MonoBehaviour
     {
         float r = Random.Range(0f, 1f);
         if (r < _healthChance)
-            Instantiate(_healthPrefab, transform.position, Quaternion.Euler(0f, 0f, 0f));
+            Instantiate(_healthPrefab, transform.position, Quaternion.identity);
     }
 }

@@ -132,7 +132,7 @@ MonoBehaviour:
   _bossBulletPrefab: {fileID: 6794646976624013552, guid: c4214b6dbe5512743bb8a8e977165f51, type: 3}
   _bulletCount: 12
   _healthPrefab: {fileID: 822591057714904738, guid: ed7f1a1ea0cd371419835c8480ea5e97, type: 3}
-  _healthChance: 1
+  _healthChance: 0.15
 --- !u!114 &1931973610896632213
 MonoBehaviour:
   m_ObjectHideFlags: 0

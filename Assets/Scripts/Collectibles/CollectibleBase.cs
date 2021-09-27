@@ -36,7 +36,7 @@ public abstract class CollectibleBase : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Health player = other.gameObject.GetComponent<Health>();
-        if (player != null)
+        if (player != null && other.gameObject.GetComponent<TankController>() != null)
         {
             Collect(player);
             Feedback();
