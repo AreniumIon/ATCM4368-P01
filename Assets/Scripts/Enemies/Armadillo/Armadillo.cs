@@ -18,7 +18,7 @@ public class Armadillo : Enemy
     private float _minWalkTime = 3f;
     private float _maxWalkTime = 8f;
     private float _prepareSwipeTime = 1f;
-    private float _prepareSwipeRotateSpeed = -70f;
+    private float _prepareSwipeRotateSpeed = -50f;
     private float _swipeTime = 2f;
     private float _rollStartTime = 1f;
     private float _rollTime = 5f;
@@ -138,10 +138,14 @@ public class Armadillo : Enemy
     // Rotates towards player, up to angle
     private void FacePlayer(float maxAngle)
     {
-        float angle = MathFunctions.GetCappedAngle(Rb.position, _targetPos, transform.forward, maxAngle);
+        Vector3 forward = transform.forward;
+        if (maxAngle < 0)
+            forward *= -1;
+
+        float angle = MathFunctions.GetCappedAngle(Rb.position, _targetPos, forward, Mathf.Abs(maxAngle) * Time.fixedDeltaTime);
 
         // Rotate entire tower horizontally
-        transform.Rotate(Vector3.up, angle * Time.fixedDeltaTime);
+        transform.Rotate(Vector3.up, angle);
     }
 
     private void Roll(float speed)
