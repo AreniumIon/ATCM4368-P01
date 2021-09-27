@@ -10,7 +10,7 @@ public class ArmadilloTail : MonoBehaviour, IDamageable
 
     private void OnCollisionEnter(Collision collision)
     {
-        _armadillo.DoCollision(collision);
+        _armadillo.DoCollision(collision.gameObject);
     }
 
     public bool TakeDamage(int damage)

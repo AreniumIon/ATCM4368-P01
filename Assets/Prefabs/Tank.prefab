@@ -10041,7 +10041,7 @@ GameObject:
   - component: {fileID: 7720170146034085692}
   - component: {fileID: 7720170146034085695}
   - component: {fileID: 7720170146034085693}
-  - component: {fileID: 7720170146034085691}
+  - component: {fileID: 776254729305076590}
   - component: {fileID: 2378020555758915227}
   - component: {fileID: 5743316381451571928}
   - component: {fileID: 7720170146034085690}
@@ -10101,7 +10101,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!114 &7720170146034085691
+--- !u!114 &776254729305076590
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10110,7 +10110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7720170146034085694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee916dcca9903544c8222ace24f02454, type: 3}
+  m_Script: {fileID: 11500000, guid: ef98899a76c4b394a86ee8d038340935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 3
@@ -10126,7 +10126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c054fa0c368de7c408b6930ace761da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 7720170146034085691}
+  health: {fileID: 776254729305076590}
   _damagedMaterial: {fileID: 2100000, guid: 98cea9b02615d8644b8502416dfceb6f, type: 2}
   _damagedFlashTime: 0.5
   _damagedSound: {fileID: 8300000, guid: f182c519eb4a40e478762e94a9d55e75, type: 3}
@@ -10144,7 +10144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5616aa4116d8db245a7a5f9ec69c241e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 7720170146034085691}
+  health: {fileID: 776254729305076590}
   _invincibilityTime: 0.5
 --- !u!114 &7720170146034085690
 MonoBehaviour:

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Killer : Enemy
 {
-    protected override bool PlayerImpact(PlayerHealth player)
+    protected override bool PlayerImpact(GameObject player, IDamageable playerDamageable)
     {
         //base.PlayerImpact(player);
-        player.Kill();
+        player.GetComponent<Health>().Kill();
         return true;
     }
 }

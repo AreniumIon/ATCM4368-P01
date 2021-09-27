@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static MathFunctions;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Enemy : MonoBehaviour
@@ -19,24 +20,26 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        DoCollision(collision);
+        DoCollision(collision.gameObject);
     }
 
     // Separate so other scripts can simulate a collision (ArmadilloTail)
-    public void DoCollision(Collision collision)
+    public void DoCollision(GameObject collision)
     {
-        PlayerHealth player = collision.gameObject.GetComponent<PlayerHealth>();
-        if (player != null)
+        IDamageable damageable = collision.GetComponent<IDamageable>();
+        Debug.Log(collision.layer.ToString());
+        if (damageable != null && IsMatchingLayer(LayerMask.GetMask("Player"), collision.layer))
         {
-            bool success = PlayerImpact(player);
+            Debug.Log("matching layers");
+            bool success = PlayerImpact(collision, damageable);
             ImpactFeedback(success);
         }
     }
 
     // Return true if successful. Used for feedback
-    protected virtual bool PlayerImpact(PlayerHealth player)
+    protected virtual bool PlayerImpact(GameObject player, IDamageable playerDamageable)
     {
-        return player.TakeDamage(_damageAmount);
+        return playerDamageable.TakeDamage(_damageAmount);
     }
 
     private void ImpactFeedback(bool success)

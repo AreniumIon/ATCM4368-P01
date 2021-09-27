@@ -1061,7 +1061,7 @@ GameObject:
   - component: {fileID: 5798079564280335870}
   - component: {fileID: 87666353030019270}
   - component: {fileID: 6702305973501560718}
-  - component: {fileID: 7852505541036740332}
+  - component: {fileID: 1815150707377182358}
   - component: {fileID: 826081019690508555}
   - component: {fileID: 507529185619431108}
   m_Layer: 6
@@ -1148,7 +1148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uncurledObject: {fileID: 3005803714160335065}
   curledObject: {fileID: 3235576004826644320}
---- !u!114 &7852505541036740332
+--- !u!114 &1815150707377182358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5798079564280335840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a3b6d25a8a61a444b8658a78350d5b3, type: 3}
+  m_Script: {fileID: 11500000, guid: ef98899a76c4b394a86ee8d038340935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
@@ -1173,7 +1173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c054fa0c368de7c408b6930ace761da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 7852505541036740332}
+  health: {fileID: 1815150707377182358}
   _damagedMaterial: {fileID: 2100000, guid: 79cb3ca62915cee4eb7d007c4cce1243, type: 2}
   _damagedFlashTime: 0.1
   _damagedSound: {fileID: 8300000, guid: 2f253d09c9bb28b4aa395338c0be6fbb, type: 3}

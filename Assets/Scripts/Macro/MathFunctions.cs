@@ -61,4 +61,9 @@ public static class MathFunctions
 
         return angle;
     }
+
+    public static bool IsMatchingLayer(LayerMask lm, int layer)
+    {
+        return lm == (lm | (1 << layer));
+    }
 }

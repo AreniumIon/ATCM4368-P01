@@ -130,13 +130,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &46424343 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7720170146034085691, guid: 2f8cf42d39cc68d48a619dc80c9ead6e, type: 3}
+  m_CorrespondingSourceObject: {fileID: 776254729305076590, guid: 2f8cf42d39cc68d48a619dc80c9ead6e, type: 3}
   m_PrefabInstance: {fileID: 7720170145569939278}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46424337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee916dcca9903544c8222ace24f02454, type: 3}
+  m_Script: {fileID: 11500000, guid: ef98899a76c4b394a86ee8d038340935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &139571740
@@ -727,6 +727,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006169242}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1118652445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1815150707377182358, guid: fcc02aeba705fc14f94bef632779072b, type: 3}
+  m_PrefabInstance: {fileID: 351620888}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef98899a76c4b394a86ee8d038340935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1275932995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,17 +1253,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb2544ab7ddc4c84da8dbbd9c2dbbe2c, type: 3}
---- !u!114 &1630025992 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7852505541036740332, guid: fcc02aeba705fc14f94bef632779072b, type: 3}
-  m_PrefabInstance: {fileID: 351620888}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a3b6d25a8a61a444b8658a78350d5b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1680647930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2107,7 +2107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6708340ed9fce4885a8be0657270a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossHealth: {fileID: 1630025992}
+  bossHealth: {fileID: 1118652445}
   healthText: {fileID: 1472470689}
 --- !u!1 &2145408605
 GameObject:

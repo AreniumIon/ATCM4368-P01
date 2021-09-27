@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1916701946758593490}
   - component: {fileID: 1462048655941381110}
   m_Layer: 0
-  m_Name: Tank Bullet
+  m_Name: Boss Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,9 +114,6 @@ MonoBehaviour:
   _collideParticles: {fileID: 3814557721303706239}
   _collideSound: {fileID: 8300000, guid: beb8a6054da9ca24c9c00bd4b9ab4fdf, type: 3}
   _damage: 1
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 192
 --- !u!1 &7277783342152082441
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +173,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f59c6c71780ca7948ac8b501d62ddefe, type: 2}
+  - {fileID: 2100000, guid: e135f8a5034935c4d8e3997e2df90a43, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5014,7 +5011,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f59c6c71780ca7948ac8b501d62ddefe, type: 2}
+  - {fileID: 2100000, guid: e135f8a5034935c4d8e3997e2df90a43, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
