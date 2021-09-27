@@ -6,24 +6,23 @@ public class Box : MonoBehaviour
 {
     [SerializeField] GameObject _bossBullet;
     [SerializeField] int _bulletCount;
+    LayerMask _spawnBulletsAttackers;
 
     Health health;
 
     private void Start()
     {
         health = GetComponent<Health>();
+        _spawnBulletsAttackers = LayerMask.GetMask("Armadillo", "ArmadilloTail", "BossBullet");
         health.TakeDamageEvent += CheckTakeDamage;
     }
 
     public void CheckTakeDamage(int damageAmount, GameObject attacker)
     {
-        if (attacker != null)
+        if (attacker != null && MathFunctions.IsMatchingLayer(_spawnBulletsAttackers, attacker.layer))
         {
-            if (attacker.GetComponent<Armadillo>() != null || attacker.GetComponent<ArmadilloTail>() != null || attacker.GetComponent<Bullet>() != null)
-            {
-                ShootBullets();
-                health.TakeDamage(3, null);
-            }
+            ShootBullets();
+            health.TakeDamage(3, null);
         }
     }
 

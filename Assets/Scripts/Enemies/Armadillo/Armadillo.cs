@@ -162,7 +162,7 @@ public class Armadillo : Enemy
     {
         BossState state;
         int choice = UnityEngine.Random.Range(0, 2);
-        choice = 0;
+        //choice = 0;
         switch (choice)
         {
             case 0:
