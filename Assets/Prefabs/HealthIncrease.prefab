@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4481054749d3b44ac2c638068caf46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifetime: 10
+  _lifetime: 15
 --- !u!114 &9045631348355514272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _material: {fileID: 2100000, guid: 9a803735375fc7b4c96243567d5047da, type: 2}
-  _timeUntilFlash: 8
+  _timeUntilFlash: 13
   _flashDuration: 0.2
 --- !u!114 &53710402392057941
 MonoBehaviour:
