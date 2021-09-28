@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class BossUI : MonoBehaviour
 {
     [SerializeField] Health bossHealth;
-    [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] Slider slider;
 
     private void OnEnable()
     {
@@ -20,6 +21,7 @@ public class BossUI : MonoBehaviour
 
     public void UpdateBossHealth(int currentHealth, int maxHealth)
     {
-        healthText.text = currentHealth + "/" + maxHealth;
+        float healthRatio = 1f * currentHealth / maxHealth;
+        slider.value = healthRatio;
     }
 }

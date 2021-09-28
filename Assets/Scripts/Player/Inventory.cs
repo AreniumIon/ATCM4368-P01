@@ -5,8 +5,6 @@ using TMPro;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI treasureText;
-
     [SerializeField] int _startingTreasure = 0;
     int treasure;
     public int Treasure
@@ -15,7 +13,6 @@ public class Inventory : MonoBehaviour
         set
         {
             treasure = value;
-            treasureText.text = treasure.ToString();
         }
     }
 

@@ -10047,7 +10047,6 @@ GameObject:
   - component: {fileID: 7720170146034085690}
   - component: {fileID: 3026912253604664034}
   - component: {fileID: 2437013433781010851}
-  - component: {fileID: 4214213808313726345}
   - component: {fileID: 5958858900398140312}
   m_Layer: 3
   m_Name: Tank
@@ -10190,20 +10189,6 @@ MonoBehaviour:
   _fireRate: 0.3
   _bulletSpawn: {fileID: 368610107694465149}
   _bulletPrefab: {fileID: 6794646976624013552, guid: 4169be0605a603a41bead80913af0f69, type: 3}
---- !u!114 &4214213808313726345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7720170146034085694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1778f44d8348bf4a96710ce67833a3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  treasureText: {fileID: 0}
-  _startingTreasure: 0
 --- !u!114 &5958858900398140312
 MonoBehaviour:
   m_ObjectHideFlags: 0
