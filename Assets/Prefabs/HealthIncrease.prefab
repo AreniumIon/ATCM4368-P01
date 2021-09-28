@@ -14,6 +14,9 @@ GameObject:
   - component: {fileID: 822591057714904749}
   - component: {fileID: 822591057714904745}
   - component: {fileID: 822591057714904744}
+  - component: {fileID: 8361094645091656164}
+  - component: {fileID: 9045631348355514272}
+  - component: {fileID: 53710402392057941}
   m_Layer: 0
   m_Name: HealthIncrease
   m_TagString: Untagged
@@ -130,6 +133,48 @@ MonoBehaviour:
   _collectParticles: {fileID: 4012852221500818682}
   _collectSound: {fileID: 8300000, guid: 18b231abd2583994f99cb50fbd9ab03a, type: 3}
   _healthAdded: 1
+--- !u!114 &8361094645091656164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822591057714904738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4481054749d3b44ac2c638068caf46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifetime: 10
+--- !u!114 &9045631348355514272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822591057714904738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c63cbb1ae7b846438593a8266c270b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _material: {fileID: 2100000, guid: 9a803735375fc7b4c96243567d5047da, type: 2}
+  _timeUntilFlash: 8
+  _flashDuration: 0.2
+--- !u!114 &53710402392057941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822591057714904738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6f9083fcf1427a45ab4adbadb632077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meshRenderers:
+  - {fileID: 822591057714904748}
 --- !u!1 &4585221798716713328
 GameObject:
   m_ObjectHideFlags: 0

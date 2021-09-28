@@ -16,7 +16,7 @@ public class Armadillo : Enemy
     private float _rollSpeed = 600f;
 
     private float _minWalkTime = 3f;
-    private float _maxWalkTime = 8f;
+    private float _maxWalkTime = 7f;
     private float _prepareSwipeTime = 1f;
     private float _prepareSwipeRotateSpeed = -50f;
     private float _swipeTime = 2f;
