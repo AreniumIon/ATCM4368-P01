@@ -6,22 +6,22 @@ using UnityEngine.UI;
 
 public class BossUI : MonoBehaviour
 {
-    [SerializeField] Health bossHealth;
-    [SerializeField] Slider slider;
+    [SerializeField] Health _bossHealth;
+    [SerializeField] Slider _slider;
 
     private void OnEnable()
     {
-        bossHealth.HealthChangedEvent += UpdateBossHealth;
+        _bossHealth.HealthChangedEvent += UpdateBossHealth;
     }
 
     private void OnDisable()
     {
-        bossHealth.HealthChangedEvent -= UpdateBossHealth;
+        _bossHealth.HealthChangedEvent -= UpdateBossHealth;
     }
 
     public void UpdateBossHealth(int currentHealth, int maxHealth)
     {
         float healthRatio = 1f * currentHealth / maxHealth;
-        slider.value = healthRatio;
+        _slider.value = healthRatio;
     }
 }

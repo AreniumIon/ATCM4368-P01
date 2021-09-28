@@ -6,22 +6,24 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
-    [SerializeField] Health playerHealth;
-    [SerializeField] Slider slider;
+    [SerializeField] Health _playerHealth;
+    [SerializeField] Slider _slider;
+    [SerializeField] TextMeshProUGUI _healthText;
 
     private void OnEnable()
     {
-        playerHealth.HealthChangedEvent += UpdatePlayerHealth;
+        _playerHealth.HealthChangedEvent += UpdatePlayerHealth;
     }
 
     private void OnDisable()
     {
-        playerHealth.HealthChangedEvent -= UpdatePlayerHealth;
+        _playerHealth.HealthChangedEvent -= UpdatePlayerHealth;
     }
 
     public void UpdatePlayerHealth(int currentHealth, int maxHealth)
     {
         float healthRatio = 1f * currentHealth / maxHealth;
-        slider.value = healthRatio;
+        _slider.value = healthRatio;
+        _healthText.text = currentHealth + "/" + maxHealth;
     }
 }
