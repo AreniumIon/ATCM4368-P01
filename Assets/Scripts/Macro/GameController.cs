@@ -10,12 +10,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Backspace))
             ReloadLevel();
         else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            //if (SceneManager.GetActiveScene().name == "MainMenu")
-                Exit();
-            //else
-            //    LoadScene("MainMenu");
-        }
+            Exit();
     }
 
     void ReloadLevel()
@@ -26,12 +21,7 @@ public class GameController : MonoBehaviour
 
     void Exit()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
     }
 
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
-        Time.timeScale = 1f;
-    }
 }
