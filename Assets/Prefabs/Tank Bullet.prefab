@@ -114,9 +114,9 @@ MonoBehaviour:
   _collideParticles: {fileID: 3814557721303706239}
   _collideSound: {fileID: 0}
   _damage: 1
-  layerMask:
+  _layerMask:
     serializedVersion: 2
-    m_Bits: 960
+    m_Bits: 704
 --- !u!1 &7277783342152082441
 GameObject:
   m_ObjectHideFlags: 0

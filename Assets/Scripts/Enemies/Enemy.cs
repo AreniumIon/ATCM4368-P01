@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using static MathFunctions;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Enemy : MonoBehaviour
 {
     [SerializeField] int _damageAmount = 1;
-    [SerializeField] LayerMask collisionMask;
+    [SerializeField] LayerMask _collisionMask;
     [SerializeField] ParticleSystem _impactParticles;
     [SerializeField] AudioClip _impactSound;
 
@@ -28,7 +29,7 @@ public class Enemy : MonoBehaviour
     public void DoCollision(GameObject collision)
     {
         IDamageable damageable = collision.GetComponent<IDamageable>();
-        if (damageable != null && IsMatchingLayer(collisionMask, collision.layer))
+        if (damageable != null && IsMatchingLayer(_collisionMask, collision.layer))
         {
             bool success = PlayerImpact(collision, damageable);
             ImpactFeedback(success);

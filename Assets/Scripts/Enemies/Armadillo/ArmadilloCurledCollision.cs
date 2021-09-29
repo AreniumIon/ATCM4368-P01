@@ -5,7 +5,7 @@ using static MathFunctions;
 
 public class ArmadilloCurledCollision : MonoBehaviour
 {
-    [SerializeField] LayerMask _groundMask;
+    [SerializeField] LayerMask _wallMask;
     [SerializeField] ParticleSystem _bounceParticles;
     [SerializeField] AudioClip _bounceSound;
     [SerializeField] float _bounceSoundVolume;
@@ -19,7 +19,12 @@ public class ArmadilloCurledCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (af.IsCurled && IsMatchingLayer(_groundMask, collision.gameObject.layer))
+        CheckBounce(collision.gameObject);
+    }
+
+    public void CheckBounce(GameObject collision)
+    {
+        if (af.IsCurled && IsMatchingLayer(_wallMask, collision.layer))
             BounceFeedback();
     }
 
