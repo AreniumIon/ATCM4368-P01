@@ -13,6 +13,7 @@ public abstract class CollectibleBase : MonoBehaviour
 
     [SerializeField] ParticleSystem _collectParticles;
     [SerializeField] AudioClip _collectSound;
+    [SerializeField] float _collectSoundVolume;
 
     Rigidbody _rb;
 

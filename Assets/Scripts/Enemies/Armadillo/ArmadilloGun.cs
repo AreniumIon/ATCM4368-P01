@@ -20,9 +20,34 @@ public class ArmadilloGun : MonoBehaviour
     [SerializeField] float _boxForceVariance;
     [SerializeField] float _boxAngleVariance;
 
+    [Header("Feedback")]
+    [SerializeField] ParticleSystem _swipeParticles;
+    [SerializeField] AudioClip _swipeSound;
+    [SerializeField] float _swipeSoundVolume;
+    [SerializeField] ParticleSystem _stompParticles;
+    [SerializeField] AudioClip _stompSound;
+    [SerializeField] float _stompSoundVolume;
+
     static float _bulletHeight = .5f;
 
+    public void Swipe()
+    {
+        SwipeFeedback();
+    }
 
+    private void SwipeFeedback()
+    {
+        // Particles
+        if (_swipeParticles != null)
+        {
+            _swipeParticles.Play();
+        }
+        // Audio
+        if (_swipeSound != null)
+        {
+            AudioHelper.PlayClip2D(_swipeSound, _swipeSoundVolume);
+        }
+    }
 
     public void ShootBullet()
     {
@@ -35,6 +60,22 @@ public class ArmadilloGun : MonoBehaviour
         for (int i  = 0; i < _stompBoxes; i++)
         {
             SpawnBox(i * 360 / _stompBoxes);
+        }
+
+        StompFeedback();
+    }
+
+    private void StompFeedback()
+    {
+        // Particles
+        if (_stompParticles != null)
+        {
+            _stompParticles.Play();
+        }
+        // Audio
+        if (_stompSound != null)
+        {
+            AudioHelper.PlayClip2D(_stompSound, _stompSoundVolume);
         }
     }
 

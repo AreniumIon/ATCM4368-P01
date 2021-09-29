@@ -10129,8 +10129,10 @@ MonoBehaviour:
   _damagedMaterial: {fileID: 2100000, guid: 98cea9b02615d8644b8502416dfceb6f, type: 2}
   _damagedFlashTime: 0.5
   _damagedSound: {fileID: 8300000, guid: f182c519eb4a40e478762e94a9d55e75, type: 3}
+  _damagedSoundVolume: 0.35
   _deathParticles: {fileID: 6974286715442207925}
   _deathSound: {fileID: 8300000, guid: efca7de7faa79f74eac302e9085a3c21, type: 3}
+  _deathSoundVolume: 0.5
 --- !u!114 &5743316381451571928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10186,6 +10188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fireParticles: {fileID: 2517132081252073892}
   _fireSound: {fileID: 8300000, guid: 0c05e3da1beae444d87570e1673f76da, type: 3}
+  _fireSoundVolume: 0.5
   _fireRate: 0.3
   _bulletSpawn: {fileID: 368610107694465149}
   _bulletPrefab: {fileID: 6794646976624013552, guid: 4169be0605a603a41bead80913af0f69, type: 3}

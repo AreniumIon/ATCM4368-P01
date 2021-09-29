@@ -1432,6 +1432,12 @@ MonoBehaviour:
   _boxForce: 750
   _boxForceVariance: 150
   _boxAngleVariance: 10
+  _swipeParticles: {fileID: 0}
+  _swipeSound: {fileID: 8300000, guid: 8d8c68a3b4ade814fa6188c404f24446, type: 3}
+  _swipeSoundVolume: 0.75
+  _stompParticles: {fileID: 0}
+  _stompSound: {fileID: 8300000, guid: 428635afd0680674e9104643f1abffb0, type: 3}
+  _stompSoundVolume: 0.75
 --- !u!114 &1815150707377182358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1461,8 +1467,10 @@ MonoBehaviour:
   _damagedMaterial: {fileID: 2100000, guid: 79cb3ca62915cee4eb7d007c4cce1243, type: 2}
   _damagedFlashTime: 0.1
   _damagedSound: {fileID: 8300000, guid: 2f253d09c9bb28b4aa395338c0be6fbb, type: 3}
+  _damagedSoundVolume: 0.6
   _deathParticles: {fileID: 1868376841084567232}
   _deathSound: {fileID: 8300000, guid: fab48d330033e6a42ab6bc620ef6815a, type: 3}
+  _deathSoundVolume: 0.75
 --- !u!114 &507529185619431108
 MonoBehaviour:
   m_ObjectHideFlags: 0

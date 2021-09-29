@@ -9,8 +9,10 @@ public class HealthFeedback : MonoBehaviour
     [SerializeField] Material _damagedMaterial;
     [SerializeField] float _damagedFlashTime;
     [SerializeField] AudioClip _damagedSound;
+    [SerializeField] float _damagedSoundVolume;
     [SerializeField] ParticleSystem _deathParticles;
     [SerializeField] AudioClip _deathSound;
+    [SerializeField] float _deathSoundVolume;
 
     private void OnEnable()
     {
@@ -37,7 +39,7 @@ public class HealthFeedback : MonoBehaviour
         // Audio
         if (_damagedSound != null)
         {
-            AudioHelper.PlayClip2D(_damagedSound, 1f);
+            AudioHelper.PlayClip2D(_damagedSound, _damagedSoundVolume);
         }
     }
 
@@ -53,7 +55,7 @@ public class HealthFeedback : MonoBehaviour
         // Audio
         if (_deathSound != null)
         {
-            AudioHelper.PlayClip2D(_deathSound, 1f);
+            AudioHelper.PlayClip2D(_deathSound, _deathSoundVolume);
         }
     }
 }

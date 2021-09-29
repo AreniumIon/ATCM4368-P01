@@ -7,7 +7,7 @@ public class TankGun : MonoBehaviour
 {
     [SerializeField] ParticleSystem _fireParticles;
     [SerializeField] AudioClip _fireSound;
-
+    [SerializeField] float _fireSoundVolume;
     [SerializeField] float _fireRate = .5f;
     public float FireRate
     {
@@ -58,7 +58,7 @@ public class TankGun : MonoBehaviour
         // Audio
         if (_fireSound != null)
         {
-            AudioHelper.PlayClip2D(_fireSound, .5f);
+            AudioHelper.PlayClip2D(_fireSound, _fireSoundVolume);
         }
     }
 }

@@ -15,4 +15,9 @@ public class ArmadilloAnimEvents : MonoBehaviour
     {
         _armadilloGun.Stomp();
     }
+
+    public void Swipe()
+    {
+        _armadilloGun.Swipe();
+    }
 }

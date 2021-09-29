@@ -163,8 +163,10 @@ MonoBehaviour:
   _damagedMaterial: {fileID: 0}
   _damagedFlashTime: 0
   _damagedSound: {fileID: 8300000, guid: 2f253d09c9bb28b4aa395338c0be6fbb, type: 3}
+  _damagedSoundVolume: 0.5
   _deathParticles: {fileID: 7452727410295735761}
   _deathSound: {fileID: 8300000, guid: 90866618bc875c046b21b50e6da3e3ef, type: 3}
+  _deathSoundVolume: 0.8
 --- !u!114 &4005529535672464521
 MonoBehaviour:
   m_ObjectHideFlags: 0
