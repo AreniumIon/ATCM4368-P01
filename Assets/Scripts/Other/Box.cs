@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
+    static float bulletHeight = .5f;
+
     [SerializeField] GameObject _bossBulletPrefab;
     [SerializeField] int _bulletCount;
 
@@ -57,6 +59,7 @@ public class Box : MonoBehaviour
 
     private void ShootBullet(float angle)
     {
+        Vector3 position = new Vector3(transform.position.x, bulletHeight, transform.position.z);
         Instantiate(_bossBulletPrefab, transform.position, Quaternion.Euler(0f, angle, 0f));
     }
 

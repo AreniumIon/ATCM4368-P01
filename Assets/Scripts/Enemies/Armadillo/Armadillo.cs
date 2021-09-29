@@ -18,7 +18,7 @@ public class Armadillo : Enemy
     private float _minWalkTime = 3f;
     private float _maxWalkTime = 7f;
     private float _prepareSwipeTime = 1f;
-    private float _prepareSwipeRotateSpeed = -50f;
+    private float _prepareSwipeRotateSpeed = -65f;
     private float _swipeTime = 2f;
     private float _rollStartTime = 1f;
     private float _rollTime = 5f;
@@ -27,6 +27,9 @@ public class Armadillo : Enemy
 
     private Vector3 _targetPos;
     public Vector3 TargetPos => _targetPos;
+
+    // Prevents same attack from being chosen twice in a row
+    private BossState _lastAttack = BossState.Idle;
 
     private BossState _previousState = BossState.Idle;
     private BossState _currentState = BossState.Idle;
@@ -173,7 +176,6 @@ public class Armadillo : Enemy
     {
         BossState state;
         int choice = UnityEngine.Random.Range(0, 3);
-        //choice = 2;
         switch (choice)
         {
             case 0:
@@ -190,6 +192,13 @@ public class Armadillo : Enemy
                 state = BossState.Prepare_Swipe;
                 break;
         }
+
+        // Recursively call method to prevent same attack
+        if (state == _lastAttack)
+            state = DecideAttack();
+
+        _lastAttack = state;
+
         return state;
     }
 }
