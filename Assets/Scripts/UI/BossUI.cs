@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BossUI : MonoBehaviour
 {
     [SerializeField] Health _bossHealth;
-    [SerializeField] Slider _slider;
+    [SerializeField] HealthBar _healthBar;
 
     private void OnEnable()
     {
@@ -22,6 +22,6 @@ public class BossUI : MonoBehaviour
     public void UpdateBossHealth(int currentHealth, int maxHealth)
     {
         float healthRatio = 1f * currentHealth / maxHealth;
-        _slider.value = healthRatio;
+        _healthBar.SetValue(healthRatio);
     }
 }
