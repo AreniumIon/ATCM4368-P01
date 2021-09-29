@@ -23,7 +23,10 @@ public class ArmadilloForms : MonoBehaviour
         BossState.Roll
     };
 
-    bool isCurled = false;
+    bool _isCurled = false;
+    public bool IsCurled => _isCurled;
+
+
     [SerializeField] GameObject uncurledObject;
     [SerializeField] GameObject curledObject;
 
@@ -38,7 +41,7 @@ public class ArmadilloForms : MonoBehaviour
     {
         bool shouldBeCurled = curledStates.Contains(currentState);
 
-        if (isCurled != shouldBeCurled)
+        if (_isCurled != shouldBeCurled)
         {
             if (shouldBeCurled)
                 SetCurled();
@@ -61,7 +64,7 @@ public class ArmadilloForms : MonoBehaviour
         curledObject.SetActive(false);
         uncurledObject.SetActive(true);
 
-        isCurled = false;
+        _isCurled = false;
     }
 
     private void RigidbodyUncurled(Rigidbody rb)
@@ -110,7 +113,7 @@ public class ArmadilloForms : MonoBehaviour
         uncurledObject.SetActive(false);
         curledObject.SetActive(true);
 
-        isCurled = true;
+        _isCurled = true;
     }
 
     private void RigidbodyCurled(Rigidbody rb)

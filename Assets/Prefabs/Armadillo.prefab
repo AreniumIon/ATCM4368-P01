@@ -1323,6 +1323,7 @@ GameObject:
   - component: {fileID: 4098951048338124705}
   - component: {fileID: 1815150707377182358}
   - component: {fileID: 826081019690508555}
+  - component: {fileID: 1925410606715393758}
   - component: {fileID: 507529185619431108}
   m_Layer: 6
   m_Name: Armadillo
@@ -1471,6 +1472,18 @@ MonoBehaviour:
   _deathParticles: {fileID: 1868376841084567232}
   _deathSound: {fileID: 8300000, guid: fab48d330033e6a42ab6bc620ef6815a, type: 3}
   _deathSoundVolume: 0.75
+--- !u!114 &1925410606715393758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5798079564280335840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6eb3c43238f0744a7ae138510cc7a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &507529185619431108
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,18 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static MathFunctions;
 
 public class ArmadilloCurledCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] LayerMask _groundMask;
+    [SerializeField] ParticleSystem _bounceParticles;
+    [SerializeField] AudioClip _bounceSound;
+    [SerializeField] float _bounceSoundVolume;
+
+    ArmadilloForms af;
+
+    private void Start()
     {
-        
+        af = GetComponent<ArmadilloForms>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (af.IsCurled && IsMatchingLayer(_groundMask, collision.gameObject.layer))
+            BounceFeedback();
     }
+
+    private void BounceFeedback()
+    {
+        // Particles
+        if (_bounceParticles != null)
+        {
+            _bounceParticles.Play();
+        }
+        // Audio
+        if (_bounceSound != null)
+        {
+            AudioHelper.PlayClip2D(_bounceSound, _bounceSoundVolume);
+        }
+    }
+
 }

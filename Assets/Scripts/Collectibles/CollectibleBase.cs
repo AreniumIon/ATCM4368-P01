@@ -58,7 +58,7 @@ public abstract class CollectibleBase : MonoBehaviour
         // Audio
         if (_collectSound != null)
         {
-            AudioHelper.PlayClip2D(_collectSound, 1f);
+            AudioHelper.PlayClip2D(_collectSound, _collectSoundVolume);
         }
     }
 }
