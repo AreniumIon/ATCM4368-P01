@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class VictoryImage : MonoBehaviour
+public class ShowTextOnDeath : MonoBehaviour
 {
     [SerializeField] Health _bossHealth;
-    [SerializeField] TextMeshProUGUI _victoryText;
+    [SerializeField] TextMeshProUGUI _text;
 
     private void Start()
     {
-        _victoryText.gameObject.SetActive(false);
+        _text.gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -25,6 +25,6 @@ public class VictoryImage : MonoBehaviour
 
     public void ShowVictoryText()
     {
-        _victoryText.gameObject.SetActive(true);
+        _text.gameObject.SetActive(true);
     }
 }
