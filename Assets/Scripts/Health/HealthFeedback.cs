@@ -27,9 +27,12 @@ public class HealthFeedback : MonoBehaviour
     protected virtual void TakeDamageFeedback(int damageAmount, GameObject attacker)
     {
         // Visuals
-        MeshList meshList = gameObject.GetComponent<MeshList>();
-        meshList?.SetMaterial(_damagedMaterial);
-        meshList?.DelayRestoreMaterials(_damagedFlashTime);
+        if (_damagedMaterial != null)
+        {
+            MeshList meshList = gameObject.GetComponent<MeshList>();
+            meshList?.SetMaterial(_damagedMaterial);
+            meshList?.DelayRestoreMaterials(_damagedFlashTime);
+        }
 
         // Audio
         if (_damagedSound != null)

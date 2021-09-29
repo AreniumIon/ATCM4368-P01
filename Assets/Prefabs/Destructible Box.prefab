@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2447667139487826544}
   - component: {fileID: 1931973610896632213}
   - component: {fileID: 3465319193903312638}
+  - component: {fileID: 4005529535672464521}
   - component: {fileID: 6553420650447185850}
   m_Layer: 9
   m_Name: Destructible Box
@@ -159,11 +160,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 1931973610896632213}
-  _damagedMaterial: {fileID: 2100000, guid: 79cb3ca62915cee4eb7d007c4cce1243, type: 2}
-  _damagedFlashTime: 0.1
+  _damagedMaterial: {fileID: 0}
+  _damagedFlashTime: 0
   _damagedSound: {fileID: 8300000, guid: 2f253d09c9bb28b4aa395338c0be6fbb, type: 3}
   _deathParticles: {fileID: 7452727410295735761}
   _deathSound: {fileID: 8300000, guid: 90866618bc875c046b21b50e6da3e3ef, type: 3}
+--- !u!114 &4005529535672464521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931973610896632214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8120eab9201bc67438e10d42a1cc07b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 1931973610896632213}
+  _meshList: {fileID: 6553420650447185850}
+  _damagedMaterial: {fileID: 2100000, guid: 5d2f6aa36127a8e49a0abcd617c50879, type: 2}
+  _healthThreshold: 1
 --- !u!114 &6553420650447185850
 MonoBehaviour:
   m_ObjectHideFlags: 0

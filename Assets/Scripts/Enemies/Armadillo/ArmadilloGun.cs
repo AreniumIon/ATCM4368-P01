@@ -19,11 +19,14 @@ public class ArmadilloGun : MonoBehaviour
     [SerializeField] float _boxForce;
     [SerializeField] float _boxForceVariance;
     [SerializeField] float _boxAngleVariance;
-    
+
+    static float _bulletHeight = .5f;
+
 
 
     public void ShootBullet()
     {
+        Vector3 position = new Vector3(_swipeSpawn.position.x, _bulletHeight, _swipeSpawn.position.z);
         Instantiate(_bulletPrefab, _swipeSpawn.position, Quaternion.Euler(0f, _swipeSpawn.rotation.eulerAngles.y, 0f));
     }
 
